@@ -9,12 +9,7 @@
 
     <title>ریحانه و محمد حسین</title>
 
-
     <style>
-
-        /* ==================================================
-           فونت ایران نستعلیق
-        ================================================== */
 
         @font-face {
             font-family: "IranNastaliq";
@@ -23,51 +18,32 @@
             font-style: normal;
         }
 
-
-        /* ==================================================
-           تنظیمات اولیه
-        ================================================== */
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             width: 100%;
             min-height: 100%;
-
             overflow-x: hidden;
-
             background: #f4dfe2;
-
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
         }
 
-
-        /* ==================================================
-           کل کارت عروسی
-        ================================================== */
-
         .wedding-card {
-
             width: 100%;
             max-width: 100%;
-
             min-height: 180vw;
-
             position: relative;
-
             overflow: hidden;
 
             background-image:
@@ -101,7 +77,7 @@
 
             justify-content: flex-start;
 
-            padding-top: 15vh;
+            padding-top: 6vh;
 
             padding-bottom: 4vh;
 
@@ -116,71 +92,37 @@
 
 
         /* ==================================================
-           حروف انگلیسی M & R
+           بسم رب عشق - بالای صفحه
         ================================================== */
 
-        .initials {
+        .top-bism {
 
-            direction: ltr;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 18px;
-
+            width: 100%;
             max-width: 100%;
 
-            opacity: 0;
-
-            animation:
-                initialsAppear 2.5s
-                ease-out
-                forwards;
-        }
-
-
-        .initial {
-
             font-family:
-                Georgia,
-                "Times New Roman",
+                "IranNastaliq",
                 serif;
 
-            font-size:
-                clamp(75px, 22vw, 120px);
-
-            font-weight: 400;
+            font-size: 50px;
 
             color: #74515a;
 
-            line-height: 1;
+            line-height: 1.5;
 
-            margin-top: 1px;
+            text-align: center;
 
-            text-shadow:
-                0 1px 2px rgba(255,255,255,0.7),
-                0 3px 8px rgba(80,50,50,0.12);
-        }
+            margin-bottom: 7vh;
 
+            opacity: 0;
 
-        /* علامت & */
+            transform:
+                translateY(20px);
 
-        .and {
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size:
-                clamp(30px, 9vw, 50px);
-
-            color: #a17a83;
-
-            margin-top: 1px;
+            animation:
+                topBismAppear 1.8s
+                ease-out
+                forwards;
         }
 
 
@@ -193,7 +135,7 @@
             width: 100%;
             max-width: 100%;
 
-            margin-top: 10vh;
+            margin-top: 0;
 
             margin-bottom: 3vh;
 
@@ -238,26 +180,21 @@
 
 
         .poem-line:nth-child(1) {
-
             animation-delay: 1s;
         }
 
 
         .poem-line:nth-child(2) {
-
             animation-delay: 1.8s;
         }
 
 
         .poem-line:nth-child(3) {
-
             animation-delay: 2.6s;
         }
 
 
-        /* ==================================================
-           یا صاحب الزمان
-        ================================================== */
+        /* یا صاحب الزمان */
 
         .ya-saheb {
 
@@ -335,32 +272,6 @@
             text-align: center;
 
             overflow: hidden;
-        }
-
-
-        /* ==================================================
-           بسم رب عشق
-        ================================================== */
-
-        .bism {
-
-            width: 100%;
-            max-width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 40px;
-
-            color: #74515a;
-
-            margin-bottom: 20px;
-
-            opacity: 0;
-
-            transform:
-                translateY(25px);
         }
 
 
@@ -468,7 +379,7 @@
            انیمیشن بخش دوم
         ================================================== */
 
-        .invitation-section.show .bism {
+        .invitation-section.show .couple-name {
 
             animation:
                 sectionAppear 1.4s
@@ -480,7 +391,7 @@
         }
 
 
-        .invitation-section.show .couple-name {
+        .invitation-section.show .family-name {
 
             animation:
                 sectionAppear 1.4s
@@ -492,7 +403,7 @@
         }
 
 
-        .invitation-section.show .family-name {
+        .invitation-section.show .invitation-text {
 
             animation:
                 sectionAppear 1.4s
@@ -504,21 +415,8 @@
         }
 
 
-        .invitation-section.show .invitation-text {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                1s;
-        }
-
-
         /* ==================================================
            بخش سوم
-           تایمر
         ================================================== */
 
         .countdown-section {
@@ -543,10 +441,6 @@
         }
 
 
-        /* ==================================================
-           انیمیشن ورود کل بخش سوم
-        ================================================== */
-
         .countdown-title,
         .countdown,
         .event-info,
@@ -558,8 +452,6 @@
                 translateY(30px);
         }
 
-
-        /* عنوان */
 
         .countdown-section.show .countdown-title {
 
@@ -573,8 +465,6 @@
         }
 
 
-        /* تایمر */
-
         .countdown-section.show .countdown {
 
             animation:
@@ -587,8 +477,6 @@
         }
 
 
-        /* اطلاعات مراسم */
-
         .countdown-section.show .event-info {
 
             animation:
@@ -600,10 +488,6 @@
                 0.9s;
         }
 
-
-        /* ==================================================
-           عنوان تایمر
-        ================================================== */
 
         .countdown-title {
 
@@ -626,10 +510,6 @@
         }
 
 
-        /* ==================================================
-           ظرف تایمر
-        ================================================== */
-
         .countdown {
 
             width: 100%;
@@ -651,10 +531,6 @@
             overflow: hidden;
         }
 
-
-        /* ==================================================
-           هر باکس تایمر
-        ================================================== */
 
         .time-box {
 
@@ -684,10 +560,6 @@
         }
 
 
-        /* ==================================================
-           عدد تایمر
-        ================================================== */
-
         .time-number {
 
             display: block;
@@ -707,10 +579,6 @@
             white-space: nowrap;
         }
 
-
-        /* ==================================================
-           روز / ساعت / دقیقه / ثانیه
-        ================================================== */
 
         .time-label {
 
@@ -733,10 +601,6 @@
             overflow-wrap: anywhere;
         }
 
-
-        /* ==================================================
-           اطلاعات مراسم
-        ================================================== */
 
         .event-info {
 
@@ -775,18 +639,12 @@
         }
 
 
-        /* مکان کل عرض را بگیرد */
-
         .event-item:last-child {
 
             grid-column:
                 1 / -1;
         }
 
-
-        /* ==================================================
-           تاریخ / ساعت / مکان
-        ================================================== */
 
         .event-label {
 
@@ -807,10 +665,6 @@
             margin-bottom: 7px;
         }
 
-
-        /* ==================================================
-           مقدار تاریخ / ساعت / مکان
-        ================================================== */
 
         .event-value {
 
@@ -872,8 +726,6 @@
         }
 
 
-        /* ظاهر شدن جمله پایانی */
-
         .countdown-section.show .final-message {
 
             animation:
@@ -890,37 +742,25 @@
            انیمیشن ها
         ================================================== */
 
-        @keyframes initialsAppear {
+        @keyframes topBismAppear {
 
             0% {
 
                 opacity: 0;
 
                 transform:
-                    translateY(25px)
-                    scale(0.96);
+                    translateY(20px);
 
                 filter:
                     blur(5px);
             }
-
-
-            60% {
-
-                opacity: 0.7;
-
-                filter:
-                    blur(1px);
-            }
-
 
             100% {
 
                 opacity: 1;
 
                 transform:
-                    translateY(0)
-                    scale(1);
+                    translateY(0);
 
                 filter:
                     blur(0);
@@ -990,7 +830,7 @@
 
             .opening-section {
 
-                padding-top: 13vh;
+                padding-top: 4vh;
 
                 padding-bottom: 3vh;
 
@@ -1000,9 +840,17 @@
             }
 
 
+            .top-bism {
+
+                font-size: 44px;
+
+                margin-bottom: 6vh;
+            }
+
+
             .opening-poem {
 
-                margin-top: 13vh;
+                margin-top: 0;
 
                 margin-bottom: 2vh;
 
@@ -1203,7 +1051,6 @@
                 rgba(116, 81, 90, 0.22);
         }
 
-
     </style>
 
 </head>
@@ -1212,9 +1059,7 @@
 <body>
 
 
-    <!-- ==================================================
-         موسیقی پس‌زمینه
-    ================================================== -->
+    <!-- موسیقی -->
 
     <button
         id="musicBtn"
@@ -1252,22 +1097,10 @@
         <section class="opening-section">
 
 
-            <!-- حروف اول اسم -->
+            <!-- بسم رب عشق در بالاترین قسمت -->
 
-            <div class="initials">
-
-                <span class="initial">
-                    M
-                </span>
-
-                <span class="and">
-                    &
-                </span>
-
-                <span class="initial">
-                    R
-                </span>
-
+            <div class="top-bism">
+                بسم ربّ العشق
             </div>
 
 
@@ -1310,13 +1143,8 @@
         >
 
 
-            <div class="bism">
-                بسم رب عشق
-            </div>
-
-
             <div class="couple-name">
-                ریحانه و محمد حسین
+                دوشیزه ریحانه و  ماه داماد محمد حسین
             </div>
 
 
@@ -1360,7 +1188,6 @@
 
         <!-- ==================================================
              بخش سوم
-             تایمر و اطلاعات مراسم
         ================================================== -->
 
         <section
@@ -1374,8 +1201,6 @@
             </div>
 
 
-
-            <!-- تایمر -->
 
             <div class="countdown">
 
@@ -1451,8 +1276,6 @@
 
 
 
-            <!-- اطلاعات مراسم -->
-
             <div class="event-info">
 
 
@@ -1491,8 +1314,8 @@
                     </span>
 
                     <span class="event-value">
-                        وکیل‌آباد۷۰، بلوار شهید برونسی،
-                        مجتمع هویزه، تالار گل مریم
+                        وکیل‌آباد۷۰،  بلوار شهید برونسی،
+                        مجتمع هویزه،  تالار گل مریم
                     </span>
 
                 </div>
@@ -1501,10 +1324,6 @@
             </div>
 
 
-
-            <!-- ==================================================
-                 جمله پایانی
-            ================================================== -->
 
             <div class="final-message">
 
@@ -1519,10 +1338,6 @@
     </main>
 
 
-
-    <!-- ==================================================
-         JavaScript
-    ================================================== -->
 
     <script>
 
@@ -1616,7 +1431,7 @@
 
 
         /* ==================================================
-           تایمر معکوس
+           تایمر
         ================================================== */
 
         const weddingDate =
@@ -1625,13 +1440,10 @@
             ).getTime();
 
 
-
         function updateCountdown() {
-
 
             const now =
                 new Date().getTime();
-
 
             const difference =
                 weddingDate - now;
@@ -1643,25 +1455,20 @@
                     "days"
                 ).innerText = "00";
 
-
                 document.getElementById(
                     "hours"
                 ).innerText = "00";
-
 
                 document.getElementById(
                     "minutes"
                 ).innerText = "00";
 
-
                 document.getElementById(
                     "seconds"
                 ).innerText = "00";
 
-
                 return;
             }
-
 
 
             const days =
@@ -1669,7 +1476,6 @@
                     difference /
                     (1000 * 60 * 60 * 24)
                 );
-
 
 
             const hours =
@@ -1682,7 +1488,6 @@
                 );
 
 
-
             const minutes =
                 Math.floor(
                     (
@@ -1693,7 +1498,6 @@
                 );
 
 
-
             const seconds =
                 Math.floor(
                     (
@@ -1702,7 +1506,6 @@
                     ) /
                     1000
                 );
-
 
 
             document.getElementById(
@@ -1731,9 +1534,6 @@
         }
 
 
-
-        /* اجرای تایمر */
-
         updateCountdown();
 
 
@@ -1745,7 +1545,7 @@
 
 
         /* ==================================================
-           انیمیشن خط جداکننده طلایی
+           خط طلایی
         ================================================== */
 
         const dividers =
@@ -1815,7 +1615,6 @@
         bgMusic.volume = 0.7;
 
 
-
         function setMusicButtonPlaying() {
 
             musicBtn.classList.add(
@@ -1827,7 +1626,6 @@
         }
 
 
-
         function setMusicButtonPaused() {
 
             musicBtn.classList.remove(
@@ -1837,7 +1635,6 @@
             musicBtn.innerHTML = "♪";
 
         }
-
 
 
         window.addEventListener(
@@ -1862,7 +1659,6 @@
 
             }
         );
-
 
 
         musicBtn.addEventListener(
