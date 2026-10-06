@@ -357,8 +357,6 @@
 
             margin-bottom: 20px;
 
-
-
             opacity: 0;
 
             transform:
@@ -542,6 +540,64 @@
             text-align: center;
 
             overflow: hidden;
+        }
+
+
+        /* ==================================================
+           انیمیشن ورود کل بخش سوم
+        ================================================== */
+
+        .countdown-title,
+        .countdown,
+        .event-info,
+        .final-message {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+        }
+
+
+        /* عنوان */
+
+        .countdown-section.show .countdown-title {
+
+            animation:
+                sectionAppear 1.4s
+                ease-out
+                forwards;
+
+            animation-delay:
+                0.1s;
+        }
+
+
+        /* تایمر */
+
+        .countdown-section.show .countdown {
+
+            animation:
+                sectionAppear 1.4s
+                ease-out
+                forwards;
+
+            animation-delay:
+                0.5s;
+        }
+
+
+        /* اطلاعات مراسم */
+
+        .countdown-section.show .event-info {
+
+            animation:
+                sectionAppear 1.4s
+                ease-out
+                forwards;
+
+            animation-delay:
+                0.9s;
         }
 
 
@@ -744,7 +800,7 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 30px;
+            font-size: 25px;
 
             color: #a17a83;
 
@@ -772,7 +828,7 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 35px;
+            font-size: 30px;
 
             line-height: 1.5;
 
@@ -781,6 +837,52 @@
             overflow-wrap: anywhere;
 
             word-break: normal;
+        }
+
+
+        /* ==================================================
+           جمله پایانی
+        ================================================== */
+
+        .final-message {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            margin-top: 80px;
+
+            margin-bottom: 100px;
+
+            padding-left: 15px;
+
+            padding-right: 15px;
+
+            text-align: center;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.8;
+
+            color: #74515a;
+        }
+
+
+        /* ظاهر شدن جمله پایانی */
+
+        .countdown-section.show .final-message {
+
+            animation:
+                sectionAppear 1.5s
+                ease-out
+                forwards;
+
+            animation-delay:
+                1.3s;
         }
 
 
@@ -860,7 +962,7 @@
                 opacity: 0;
 
                 transform:
-                    translateY(25px);
+                    translateY(30px);
 
                 filter:
                     blur(4px);
@@ -989,6 +1091,20 @@
             .event-value {
 
                 font-size: 30px;
+            }
+
+
+            .final-message {
+
+                font-size: 30px;
+
+                margin-top: 70px;
+
+                margin-bottom: 100px;
+
+                padding-left: 10px;
+
+                padding-right: 10px;
             }
 
 
@@ -1213,11 +1329,15 @@
 
                 زندگی‌مان را با توکل به خدا و ائمه آغاز می‌کنیم
 
+                <br>
+
                 و در سالروز ولادت حضرت زینب (س)
 
                 <br>
 
                 با هم یکی شدنمان را جشن می‌گیریم
+
+                <br>
 
                 و فصل جدید زندگی‌مان را در این روز پربرکت آغاز می‌کنیم.
 
@@ -1243,7 +1363,10 @@
              تایمر و اطلاعات مراسم
         ================================================== -->
 
-        <section class="countdown-section">
+        <section
+            class="countdown-section"
+            id="countdownSection"
+        >
 
 
             <div class="countdown-title">
@@ -1378,6 +1501,18 @@
             </div>
 
 
+
+            <!-- ==================================================
+                 جمله پایانی
+            ================================================== -->
+
+            <div class="final-message">
+
+                منتظر حضور گرم شما عزیزان هستیم.
+
+            </div>
+
+
         </section>
 
 
@@ -1432,6 +1567,50 @@
 
         observer.observe(
             invitationSection
+        );
+
+
+
+        /* ==================================================
+           انیمیشن بخش سوم هنگام اسکرول
+        ================================================== */
+
+        const countdownSection =
+            document.querySelector(
+                ".countdown-section"
+            );
+
+
+        const countdownObserver =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (entry.isIntersecting) {
+
+                                countdownSection
+                                    .classList
+                                    .add("show");
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        countdownObserver.observe(
+            countdownSection
         );
 
 
@@ -1633,18 +1812,9 @@
             );
 
 
-        /*
-         * حجم صدا
-         * عدد 0.7 یعنی 70 درصد
-         */
-
         bgMusic.volume = 0.7;
 
 
-
-        /*
-         * تغییر ظاهر دکمه
-         */
 
         function setMusicButtonPlaying() {
 
@@ -1670,11 +1840,6 @@
 
 
 
-        /*
-         * تلاش برای پخش خودکار
-         * به محض باز شدن سایت
-         */
-
         window.addEventListener(
             "load",
             function () {
@@ -1690,13 +1855,6 @@
                     .catch(
                         function () {
 
-                            /*
-                             * اگر مرورگر اجازه
-                             * پخش خودکار نداد،
-                             * موسیقی فقط با دکمه
-                             * قابل پخش خواهد بود.
-                             */
-
                             setMusicButtonPaused();
 
                         }
@@ -1706,16 +1864,6 @@
         );
 
 
-
-        /*
-         * دکمه موسیقی
-         *
-         * اگر موسیقی در حال پخش باشد:
-         *     متوقف می‌شود.
-         *
-         * اگر موسیقی متوقف باشد:
-         *     از همان نقطه ادامه پیدا می‌کند.
-         */
 
         musicBtn.addEventListener(
             "click",
