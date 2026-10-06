@@ -39,11 +39,125 @@
                 serif;
         }
 
+
+        /* ==================================================
+           صفحه افتتاحیه
+        ================================================== */
+
+        .intro-screen {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            z-index: 10000;
+
+            background-image:
+                url("back 2.png");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+            background-repeat:
+                no-repeat;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            padding-bottom: 12vh;
+
+            cursor: pointer;
+
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease;
+        }
+
+
+        /* نوشته روی صفحه اول */
+
+        .intro-text {
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 32px;
+
+            color: #74515a;
+
+            text-align: center;
+
+            opacity: 0;
+
+            animation:
+                introTextAppear 2s
+                ease-out
+                1s
+                forwards;
+
+            text-shadow:
+                0 1px 3px
+                rgba(255,255,255,0.7);
+        }
+
+
+        /* وقتی روی صفحه ضربه زده شد */
+
+        .intro-screen.hide {
+
+            opacity: 0;
+
+            transform:
+                translateY(-100%);
+
+            pointer-events: none;
+        }
+
+
+        @keyframes introTextAppear {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* ==================================================
+           کل کارت اصلی
+        ================================================== */
+
         .wedding-card {
+
             width: 100%;
             max-width: 100%;
+
             min-height: 180vw;
+
             position: relative;
+
             overflow: hidden;
 
             background-image:
@@ -92,7 +206,7 @@
 
 
         /* ==================================================
-           بسم رب عشق - بالای صفحه
+           بسم رب العشق
         ================================================== */
 
         .top-bism {
@@ -194,8 +308,6 @@
         }
 
 
-        /* یا صاحب الزمان */
-
         .ya-saheb {
 
             margin-top: 8px;
@@ -275,10 +387,6 @@
         }
 
 
-        /* ==================================================
-           اسم عروس و داماد
-        ================================================== */
-
         .couple-name {
 
             width: 100%;
@@ -310,10 +418,6 @@
         }
 
 
-        /* ==================================================
-           نام خانوادگی
-        ================================================== */
-
         .family-name {
 
             width: 100%;
@@ -337,10 +441,6 @@
             overflow-wrap: anywhere;
         }
 
-
-        /* ==================================================
-           متن دعوت
-        ================================================== */
 
         .invitation-text {
 
@@ -374,10 +474,6 @@
             word-break: normal;
         }
 
-
-        /* ==================================================
-           انیمیشن بخش دوم
-        ================================================== */
 
         .invitation-section.show .couple-name {
 
@@ -862,6 +958,12 @@
             }
 
 
+            .intro-text {
+
+                font-size: 28px;
+            }
+
+
             .invitation-section {
 
                 padding-top: 4vh;
@@ -1059,7 +1161,25 @@
 <body>
 
 
-    <!-- موسیقی -->
+    <!-- ==================================================
+         صفحه اول / کاور
+    ================================================== -->
+
+    <div
+        class="intro-screen"
+        id="introScreen"
+    >
+
+        <div class="intro-text">
+            برای ورود ضربه بزنید
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         موسیقی
+    ================================================== -->
 
     <button
         id="musicBtn"
@@ -1087,7 +1207,7 @@
 
 
 
-    <main class="wedding-card">
+    <main class="wedding-card" id="mainCard">
 
 
         <!-- ==================================================
@@ -1097,14 +1217,10 @@
         <section class="opening-section">
 
 
-            <!-- بسم رب عشق در بالاترین قسمت -->
-
             <div class="top-bism">
                 بسم ربّ العشق
             </div>
 
-
-            <!-- شعر -->
 
             <div class="opening-poem">
 
@@ -1127,8 +1243,6 @@
 
 
 
-        <!-- خط طلایی -->
-
         <div class="section-divider"></div>
 
 
@@ -1144,7 +1258,7 @@
 
 
             <div class="couple-name">
-                دوشیزه ریحانه و  ماه داماد محمد حسین
+                ریحانه و محمد حسین
             </div>
 
 
@@ -1179,8 +1293,6 @@
         </section>
 
 
-
-        <!-- خط طلایی -->
 
         <div class="section-divider"></div>
 
@@ -1314,8 +1426,8 @@
                     </span>
 
                     <span class="event-value">
-                        وکیل‌آباد۷۰،  بلوار شهید برونسی،
-                        مجتمع هویزه،  تالار گل مریم
+                        وکیل‌آباد۷۰، بلوار شهید برونسی،
+                        مجتمع هویزه، تالار گل مریم
                     </span>
 
                 </div>
@@ -1343,7 +1455,58 @@
 
 
         /* ==================================================
-           انیمیشن بخش دوم هنگام اسکرول
+           باز کردن صفحه اول با ضربه
+        ================================================== */
+
+        const introScreen =
+            document.getElementById(
+                "introScreen"
+            );
+
+        const mainCard =
+            document.getElementById(
+                "mainCard"
+            );
+
+
+        function openInvitation() {
+
+            introScreen.classList.add("hide");
+
+
+            setTimeout(
+                function () {
+
+                    window.scrollTo({
+                        top: mainCard.offsetTop,
+                        behavior: "smooth"
+                    });
+
+                },
+                350
+            );
+
+        }
+
+
+        introScreen.addEventListener(
+            "click",
+            openInvitation
+        );
+
+
+        introScreen.addEventListener(
+            "touchstart",
+            openInvitation,
+            {
+                passive: true
+            }
+        );
+
+
+
+        /* ==================================================
+           انیمیشن بخش دوم
         ================================================== */
 
         const invitationSection =
@@ -1387,7 +1550,7 @@
 
 
         /* ==================================================
-           انیمیشن بخش سوم هنگام اسکرول
+           انیمیشن بخش سوم
         ================================================== */
 
         const countdownSection =
@@ -1451,21 +1614,10 @@
 
             if (difference <= 0) {
 
-                document.getElementById(
-                    "days"
-                ).innerText = "00";
-
-                document.getElementById(
-                    "hours"
-                ).innerText = "00";
-
-                document.getElementById(
-                    "minutes"
-                ).innerText = "00";
-
-                document.getElementById(
-                    "seconds"
-                ).innerText = "00";
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
 
                 return;
             }
@@ -1508,27 +1660,16 @@
                 );
 
 
-            document.getElementById(
-                "days"
-            ).innerText =
+            document.getElementById("days").innerText =
                 String(days).padStart(2, "0");
 
-
-            document.getElementById(
-                "hours"
-            ).innerText =
+            document.getElementById("hours").innerText =
                 String(hours).padStart(2, "0");
 
-
-            document.getElementById(
-                "minutes"
-            ).innerText =
+            document.getElementById("minutes").innerText =
                 String(minutes).padStart(2, "0");
 
-
-            document.getElementById(
-                "seconds"
-            ).innerText =
+            document.getElementById("seconds").innerText =
                 String(seconds).padStart(2, "0");
 
         }
