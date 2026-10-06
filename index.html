@@ -18,18 +18,15 @@
             font-style: normal;
         }
 
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             width: 100%;
@@ -41,7 +38,6 @@
                 "Times New Roman",
                 serif;
         }
-
 
 
         /* ==================================================
@@ -193,8 +189,8 @@
 
             justify-content: flex-start;
 
-            /* بسم رب عشق کمی پایین‌تر آمده */
-            padding-top: 10vh;
+            /* بسم رب العشق پایین‌تر از قبل */
+            padding-top: 18vh;
 
             padding-bottom: 5vh;
 
@@ -267,7 +263,6 @@
                 "IranNastaliq",
                 serif;
 
-            /* بزرگ‌تر شد */
             font-size: 40px;
 
             line-height: 1.6;
@@ -426,8 +421,6 @@
         }
 
 
-        /* فامیل‌ها بزرگ‌تر شدند */
-
         .family-name {
 
             width: 100%;
@@ -451,8 +444,6 @@
             overflow-wrap: anywhere;
         }
 
-
-        /* متن دعوت بزرگ‌تر شد */
 
         .invitation-text {
 
@@ -570,7 +561,7 @@
                 forwards;
 
             animation-delay:
-                0.1s;
+                0.5s;
         }
 
 
@@ -582,7 +573,7 @@
                 forwards;
 
             animation-delay:
-                0.5s;
+                0.1s;
         }
 
 
@@ -612,45 +603,18 @@
 
 
         /* ==================================================
-           عنوان تایمر
-        ================================================== */
-
-        .countdown-title {
-
-            width: 100%;
-            max-width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 38px;
-
-            color: #74515a;
-
-            margin-bottom: 25px;
-
-            margin-top: 80px;
-
-            overflow-wrap: anywhere;
-        }
-
-
-
-        /* ==================================================
-           اطلاعات تاریخ و ساعت
-           اول قرار گرفته
+           تاریخ و ساعت کنار هم
         ================================================== */
 
         .event-info {
 
             width: 100%;
 
-            max-width: 100%;
+            max-width: 600px;
 
-            margin-top: 0;
+            margin-top: 20px;
 
-            margin-bottom: 35px;
+            margin-bottom: 10px;
 
             text-align: center;
 
@@ -660,19 +624,21 @@
 
             display: flex;
 
-            flex-direction: column;
+            flex-direction: row;
 
-            align-items: center;
+            justify-content: center;
 
-            gap: 22px;
+            align-items: flex-start;
+
+            gap: 15px;
         }
 
 
         .event-item {
 
-            width: 100%;
+            flex: 1;
 
-            margin-bottom: 0;
+            min-width: 0;
 
             overflow: hidden;
 
@@ -685,8 +651,6 @@
             display: block;
 
             width: 100%;
-
-            max-width: 100%;
 
             font-family:
                 "IranNastaliq",
@@ -706,17 +670,15 @@
 
             width: 100%;
 
-            max-width: 100%;
+            padding-left: 3px;
 
-            padding-left: 5px;
-
-            padding-right: 5px;
+            padding-right: 3px;
 
             font-family:
                 "IranNastaliq",
                 serif;
 
-            font-size: 35px;
+            font-size: 31px;
 
             line-height: 1.5;
 
@@ -730,9 +692,60 @@
 
 
         /* ==================================================
+           عنوان تا آغاز این شب زیبا
+        ================================================== */
+
+        .countdown-title {
+
+            width: 100%;
+            max-width: 100%;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 38px;
+
+            color: #74515a;
+
+            margin-top: 45px;
+
+            margin-bottom: 25px;
+
+            overflow-wrap: anywhere;
+
+            order: 2;
+        }
+
+
+        .event-info {
+            order: 1;
+        }
+
+
+        .countdown {
+            order: 3;
+        }
+
+
+        .address-info {
+            order: 4;
+        }
+
+
+        .final-message {
+            order: 5;
+        }
+
+
+        .absence-message {
+            order: 6;
+        }
+
+
+
+        /* ==================================================
            باکس‌های تایمر
-           از چپ:
-           روز - ساعت - دقیقه - ثانیه
         ================================================== */
 
         .countdown {
@@ -743,7 +756,6 @@
 
             display: flex;
 
-            /* ترتیب از چپ به راست */
             direction: ltr;
 
             justify-content: center;
@@ -756,6 +768,8 @@
             padding-right: 2px;
 
             overflow: hidden;
+
+            margin-bottom: 20px;
         }
 
 
@@ -835,6 +849,65 @@
 
 
         /* ==================================================
+           آدرس زیر تایمر
+        ================================================== */
+
+        .address-info {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            margin-top: 25px;
+
+            margin-bottom: 20px;
+
+            padding-left: 10px;
+
+            padding-right: 10px;
+
+            text-align: center;
+        }
+
+
+        .address-label {
+
+            display: block;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 28px;
+
+            color: #a17a83;
+
+            margin-bottom: 5px;
+        }
+
+
+        .address-value {
+
+            display: block;
+
+            width: 100%;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 32px;
+
+            line-height: 1.6;
+
+            color: #684852;
+
+            overflow-wrap: anywhere;
+        }
+
+
+
+        /* ==================================================
            پیام‌های پایانی
         ================================================== */
 
@@ -844,7 +917,7 @@
 
             max-width: 100%;
 
-            margin-top: 80px;
+            margin-top: 60px;
 
             margin-bottom: 35px;
 
@@ -955,7 +1028,6 @@
                     blur(4px);
             }
 
-
             100% {
 
                 opacity: 1;
@@ -982,7 +1054,6 @@
                     blur(4px);
             }
 
-
             100% {
 
                 opacity: 1;
@@ -1005,7 +1076,7 @@
 
             .opening-section {
 
-                padding-top: 8vh;
+                padding-top: 14vh;
 
                 padding-bottom: 3vh;
 
@@ -1097,23 +1168,35 @@
             }
 
 
-            .countdown-title {
+            .event-info {
 
-                font-size: 34px;
+                gap: 8px;
 
-                margin-top: 60px;
+                max-width: 100%;
             }
 
 
             .event-label {
 
-                font-size: 25px;
+                font-size: 24px;
             }
 
 
             .event-value {
 
-                font-size: 31px;
+                font-size: 27px;
+
+                line-height: 1.5;
+            }
+
+
+            .countdown-title {
+
+                font-size: 34px;
+
+                margin-top: 35px;
+
+                margin-bottom: 20px;
             }
 
 
@@ -1157,11 +1240,35 @@
             }
 
 
+            .address-info {
+
+                margin-top: 20px;
+
+                padding-left: 5px;
+
+                padding-right: 5px;
+            }
+
+
+            .address-label {
+
+                font-size: 25px;
+            }
+
+
+            .address-value {
+
+                font-size: 29px;
+
+                line-height: 1.6;
+            }
+
+
             .final-message {
 
                 font-size: 31px;
 
-                margin-top: 60px;
+                margin-top: 50px;
 
                 margin-bottom: 25px;
 
@@ -1386,7 +1493,6 @@
             id="invitation"
         >
 
-
             <div class="couple-name">
                 ریحانه و محمد حسین
             </div>
@@ -1419,7 +1525,6 @@
 
             </div>
 
-
         </section>
 
 
@@ -1438,18 +1543,9 @@
         >
 
 
-            <div class="countdown-title">
-                تا آغاز این شب زیبا
-            </div>
-
-
-
-            <!-- ==================================================
-                 تاریخ و ساعت - بالای تایمر
-            ================================================== -->
+            <!-- تاریخ و ساعت -->
 
             <div class="event-info">
-
 
                 <div class="event-item">
 
@@ -1464,7 +1560,6 @@
                 </div>
 
 
-
                 <div class="event-item">
 
                     <span class="event-label">
@@ -1477,34 +1572,21 @@
 
                 </div>
 
-
-
-                <div class="event-item">
-
-                    <span class="event-label">
-                        مکان
-                    </span>
-
-                    <span class="event-value">
-                        وکیل‌آباد۷۰، بلوار شهید برونسی،
-                        مجتمع هویزه، تالار گل مریم
-                    </span>
-
-                </div>
-
-
             </div>
 
 
 
-            <!-- ==================================================
-                 تایمر
-                 ترتیب از چپ:
-                 روز - ساعت - دقیقه - ثانیه
-            ================================================== -->
+            <!-- عنوان -->
+
+            <div class="countdown-title">
+                تا آغاز این شب زیبا
+            </div>
+
+
+
+            <!-- تایمر -->
 
             <div class="countdown">
-
 
                 <div class="time-box">
 
@@ -1520,7 +1602,6 @@
                     </span>
 
                 </div>
-
 
 
                 <div class="time-box">
@@ -1539,7 +1620,6 @@
                 </div>
 
 
-
                 <div class="time-box">
 
                     <span
@@ -1554,7 +1634,6 @@
                     </span>
 
                 </div>
-
 
 
                 <div class="time-box">
@@ -1572,14 +1651,29 @@
 
                 </div>
 
+            </div>
+
+
+
+            <!-- آدرس -->
+
+            <div class="address-info">
+
+                <span class="address-label">
+                    مکان
+                </span>
+
+                <span class="address-value">
+                    وکیل‌آباد۷۰، بلوار شهید برونسی،
+                    <br>
+                    مجتمع هویزه، تالار گل مریم
+                </span>
 
             </div>
 
 
 
-            <!-- ==================================================
-                 پیام پایانی اول
-            ================================================== -->
+            <!-- پیام پایانی -->
 
             <div class="final-message">
 
@@ -1589,14 +1683,14 @@
 
 
 
-            <!-- ==================================================
-                 پیام عدم حضور
-            ================================================== -->
+            <!-- پیام عدم حضور -->
 
             <div class="absence-message">
 
                 در صورت عدم حضور لطفا تا 48 ساعت آینده اطلاع دهید.
+
                 <br>
+
                 با تشکر
 
             </div>
@@ -1613,7 +1707,7 @@
 
 
         /* ==================================================
-           باز کردن صفحه اول با ضربه
+           باز کردن صفحه اول
         ================================================== */
 
         const introScreen =
