@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> به شوق آغاز یک زندگی تازه </title>
+    <title>به شوق آغاز یک زندگی تازه</title>
 
     <style>
 
@@ -18,15 +18,18 @@
             font-style: normal;
         }
 
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             width: 100%;
@@ -38,6 +41,7 @@
                 "Times New Roman",
                 serif;
         }
+
 
 
         /* ==================================================
@@ -84,8 +88,6 @@
         }
 
 
-        /* نوشته روی صفحه اول */
-
         .intro-text {
 
             font-family:
@@ -111,8 +113,6 @@
                 rgba(255,255,255,0.7);
         }
 
-
-        /* وقتی روی صفحه ضربه زده شد */
 
         .intro-screen.hide {
 
@@ -145,6 +145,7 @@
         }
 
 
+
         /* ==================================================
            کل کارت اصلی
         ================================================== */
@@ -174,6 +175,7 @@
         }
 
 
+
         /* ==================================================
            بخش اول
         ================================================== */
@@ -191,18 +193,20 @@
 
             justify-content: flex-start;
 
-            padding-top: 6vh;
+            /* بسم رب عشق کمی پایین‌تر آمده */
+            padding-top: 10vh;
 
-            padding-bottom: 4vh;
+            padding-bottom: 5vh;
 
-            padding-left: 25px;
+            padding-left: 20px;
 
-            padding-right: 25px;
+            padding-right: 20px;
 
             text-align: center;
 
             overflow: hidden;
         }
+
 
 
         /* ==================================================
@@ -218,7 +222,7 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 50px;
+            font-size: 55px;
 
             color: #74515a;
 
@@ -226,7 +230,7 @@
 
             text-align: center;
 
-            margin-bottom: 7vh;
+            margin-bottom: 8vh;
 
             opacity: 0;
 
@@ -240,6 +244,7 @@
         }
 
 
+
         /* ==================================================
            شعر
         ================================================== */
@@ -251,10 +256,10 @@
 
             margin-top: 0;
 
-            margin-bottom: 3vh;
+            margin-bottom: 4vh;
 
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
 
             color: #74515a;
 
@@ -262,9 +267,10 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 30px;
+            /* بزرگ‌تر شد */
+            font-size: 40px;
 
-            line-height: 1.5;
+            line-height: 1.6;
 
             text-align: center;
 
@@ -310,16 +316,17 @@
 
         .ya-saheb {
 
-            margin-top: 8px;
+            margin-top: 10px;
 
             font-family:
                 "IranNastaliq",
                 serif;
 
-            font-size: 50px;
+            font-size: 55px;
 
             letter-spacing: 1px;
         }
+
 
 
         /* ==================================================
@@ -361,8 +368,9 @@
         }
 
 
+
         /* ==================================================
-           بخش دوم
+           بخش دعوت
         ================================================== */
 
         .invitation-section {
@@ -372,8 +380,8 @@
 
             padding:
                 5vh
-                25px
-                3vh;
+                20px
+                4vh;
 
             display: flex;
 
@@ -399,13 +407,13 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 55px;
+            font-size: 60px;
 
             font-weight: 500;
 
             color: #684852;
 
-            line-height: 0.7;
+            line-height: 1;
 
             margin-top: 30px;
 
@@ -417,6 +425,8 @@
             overflow-wrap: anywhere;
         }
 
+
+        /* فامیل‌ها بزرگ‌تر شدند */
 
         .family-name {
 
@@ -427,11 +437,11 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 30px;
+            font-size: 40px;
 
             color: #8a656d;
 
-            margin-top: 7px;
+            margin-top: 15px;
 
             opacity: 0;
 
@@ -442,25 +452,27 @@
         }
 
 
+        /* متن دعوت بزرگ‌تر شد */
+
         .invitation-text {
 
             width: 100%;
             max-width: 100%;
 
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
 
-            margin-top: 30px;
+            margin-top: 35px;
 
-            margin-bottom: 4px;
+            margin-bottom: 5px;
 
             font-family:
                 "IranNastaliq",
                 serif;
 
-            font-size: 25px;
+            font-size: 35px;
 
-            line-height: 1.6;
+            line-height: 1.7;
 
             color: #76535c;
 
@@ -511,6 +523,7 @@
         }
 
 
+
         /* ==================================================
            بخش سوم
         ================================================== */
@@ -522,8 +535,8 @@
 
             padding:
                 5vh
-                20px
-                4vh;
+                15px
+                5vh;
 
             display: flex;
 
@@ -561,7 +574,7 @@
         }
 
 
-        .countdown-section.show .countdown {
+        .countdown-section.show .event-info {
 
             animation:
                 sectionAppear 1.4s
@@ -573,7 +586,7 @@
         }
 
 
-        .countdown-section.show .event-info {
+        .countdown-section.show .countdown {
 
             animation:
                 sectionAppear 1.4s
@@ -585,6 +598,23 @@
         }
 
 
+        .countdown-section.show .final-message {
+
+            animation:
+                sectionAppear 1.5s
+                ease-out
+                forwards;
+
+            animation-delay:
+                1.3s;
+        }
+
+
+
+        /* ==================================================
+           عنوان تایمر
+        ================================================== */
+
         .countdown-title {
 
             width: 100%;
@@ -594,26 +624,127 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 35px;
+            font-size: 38px;
 
             color: #74515a;
 
-            margin-bottom: 35px;
+            margin-bottom: 25px;
 
-            margin-top: 300px;
+            margin-top: 80px;
 
             overflow-wrap: anywhere;
         }
 
 
+
+        /* ==================================================
+           اطلاعات تاریخ و ساعت
+           اول قرار گرفته
+        ================================================== */
+
+        .event-info {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            margin-top: 0;
+
+            margin-bottom: 35px;
+
+            text-align: center;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 22px;
+        }
+
+
+        .event-item {
+
+            width: 100%;
+
+            margin-bottom: 0;
+
+            overflow: hidden;
+
+            text-align: center;
+        }
+
+
+        .event-label {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 100%;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 28px;
+
+            color: #a17a83;
+
+            margin-bottom: 5px;
+        }
+
+
+        .event-value {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 100%;
+
+            padding-left: 5px;
+
+            padding-right: 5px;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 35px;
+
+            line-height: 1.5;
+
+            color: #684852;
+
+            overflow-wrap: anywhere;
+
+            word-break: normal;
+        }
+
+
+
+        /* ==================================================
+           باکس‌های تایمر
+           از چپ:
+           روز - ساعت - دقیقه - ثانیه
+        ================================================== */
+
         .countdown {
 
             width: 100%;
+
             max-width: 100%;
 
             display: flex;
 
-            direction: rtl;
+            /* ترتیب از چپ به راست */
+            direction: ltr;
 
             justify-content: center;
 
@@ -621,8 +752,8 @@
 
             gap: 6px;
 
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: 2px;
+            padding-right: 2px;
 
             overflow: hidden;
         }
@@ -638,7 +769,9 @@
 
             max-width: 70px;
 
-            padding: 12px 2px;
+            padding:
+                12px
+                2px;
 
             border:
                 1px solid
@@ -653,6 +786,8 @@
                 blur(2px);
 
             overflow: hidden;
+
+            text-align: center;
         }
 
 
@@ -688,7 +823,7 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 20px;
+            font-size: 21px;
 
             color: #8a656d;
 
@@ -698,100 +833,9 @@
         }
 
 
-        .event-info {
-
-            width: fit-content;
-
-            max-width: 100%;
-
-            margin-top: 25px;
-
-            text-align: center;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            display: grid;
-
-            grid-template-columns:
-                auto auto;
-
-            column-gap: 25px;
-
-            row-gap: 20px;
-
-            justify-content: center;
-        }
-
-
-        .event-item {
-
-            width: 100%;
-
-            margin-bottom: 0;
-
-            overflow: hidden;
-        }
-
-
-        .event-item:last-child {
-
-            grid-column:
-                1 / -1;
-        }
-
-
-        .event-label {
-
-            display: block;
-
-            width: 100%;
-
-            max-width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 25px;
-
-            color: #a17a83;
-
-            margin-bottom: 7px;
-        }
-
-
-        .event-value {
-
-            display: block;
-
-            width: 100%;
-
-            max-width: 100%;
-
-            padding-left: 5px;
-
-            padding-right: 5px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 30px;
-
-            line-height: 1.5;
-
-            color: #684852;
-
-            overflow-wrap: anywhere;
-
-            word-break: normal;
-        }
-
 
         /* ==================================================
-           جمله پایانی
+           پیام‌های پایانی
         ================================================== */
 
         .final-message {
@@ -802,11 +846,11 @@
 
             margin-top: 80px;
 
-            margin-bottom: 100px;
+            margin-bottom: 35px;
 
-            padding-left: 15px;
+            padding-left: 10px;
 
-            padding-right: 15px;
+            padding-right: 10px;
 
             text-align: center;
 
@@ -814,7 +858,7 @@
                 "IranNastaliq",
                 serif;
 
-            font-size: 34px;
+            font-size: 35px;
 
             line-height: 1.8;
 
@@ -822,7 +866,40 @@
         }
 
 
-        .countdown-section.show .final-message {
+        .absence-message {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            margin-top: 10px;
+
+            margin-bottom: 100px;
+
+            padding-left: 10px;
+
+            padding-right: 10px;
+
+            text-align: center;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 35px;
+
+            line-height: 1.8;
+
+            color: #74515a;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+        }
+
+
+        .countdown-section.show .absence-message {
 
             animation:
                 sectionAppear 1.5s
@@ -830,8 +907,9 @@
                 forwards;
 
             animation-delay:
-                1.3s;
+                1.6s;
         }
+
 
 
         /* ==================================================
@@ -918,27 +996,28 @@
         }
 
 
+
         /* ==================================================
-           موبایل های کوچک
+           موبایل‌های کوچک
         ================================================== */
 
         @media (max-width: 380px) {
 
             .opening-section {
 
-                padding-top: 4vh;
+                padding-top: 8vh;
 
                 padding-bottom: 3vh;
 
-                padding-left: 18px;
+                padding-left: 15px;
 
-                padding-right: 18px;
+                padding-right: 15px;
             }
 
 
             .top-bism {
 
-                font-size: 44px;
+                font-size: 46px;
 
                 margin-bottom: 6vh;
             }
@@ -946,15 +1025,19 @@
 
             .opening-poem {
 
-                margin-top: 0;
-
                 margin-bottom: 2vh;
 
-                font-size: 30px;
+                font-size: 34px;
 
-                padding-left: 5px;
+                padding-left: 2px;
 
-                padding-right: 5px;
+                padding-right: 2px;
+            }
+
+
+            .ya-saheb {
+
+                font-size: 46px;
             }
 
 
@@ -968,69 +1051,119 @@
 
                 padding-top: 4vh;
 
-                padding-bottom: 2vh;
+                padding-bottom: 3vh;
 
-                padding-left: 18px;
+                padding-left: 12px;
 
-                padding-right: 18px;
+                padding-right: 12px;
             }
 
 
             .couple-name {
 
-                font-size: 80px;
+                font-size: 55px;
+
+                line-height: 1.1;
+            }
+
+
+            .family-name {
+
+                font-size: 34px;
             }
 
 
             .invitation-text {
 
-                font-size: 28px;
+                font-size: 31px;
 
-                padding-left: 5px;
+                padding-left: 2px;
 
-                padding-right: 5px;
+                padding-right: 2px;
+
+                line-height: 1.7;
             }
 
 
             .countdown-section {
 
-                padding-top: 4vh;
+                padding-top: 3vh;
 
                 padding-bottom: 3vh;
 
-                padding-left: 15px;
+                padding-left: 8px;
 
-                padding-right: 15px;
+                padding-right: 8px;
+            }
+
+
+            .countdown-title {
+
+                font-size: 34px;
+
+                margin-top: 60px;
+            }
+
+
+            .event-label {
+
+                font-size: 25px;
+            }
+
+
+            .event-value {
+
+                font-size: 31px;
             }
 
 
             .countdown {
 
-                gap: 4px;
+                gap: 3px;
 
-                padding-left: 2px;
+                padding-left: 0;
 
-                padding-right: 2px;
+                padding-right: 0;
             }
 
 
             .time-box {
 
-                padding:
-                    12px
-                    2px;
+                flex: 0 0 68px;
 
-                border-radius: 10px;
+                width: 68px;
+
+                min-width: 68px;
+
+                max-width: 68px;
+
+                padding:
+                    11px
+                    1px;
+
+                border-radius: 9px;
+            }
+
+
+            .time-number {
+
+                font-size: 25px;
             }
 
 
             .time-label {
 
-                font-size: 22px;
+                font-size: 20px;
             }
 
 
-            .event-info {
+            .final-message {
+
+                font-size: 31px;
+
+                margin-top: 60px;
+
+                margin-bottom: 25px;
 
                 padding-left: 5px;
 
@@ -1038,23 +1171,15 @@
             }
 
 
-            .event-value {
+            .absence-message {
 
-                font-size: 30px;
-            }
+                font-size: 31px;
 
+                margin-bottom: 80px;
 
-            .final-message {
+                padding-left: 5px;
 
-                font-size: 30px;
-
-                margin-top: 70px;
-
-                margin-bottom: 100px;
-
-                padding-left: 10px;
-
-                padding-right: 10px;
+                padding-right: 5px;
             }
 
 
@@ -1158,6 +1283,7 @@
 </head>
 
 
+
 <body>
 
 
@@ -1175,6 +1301,7 @@
         </div>
 
     </div>
+
 
 
     <!-- ==================================================
@@ -1207,7 +1334,10 @@
 
 
 
-    <main class="wedding-card" id="mainCard">
+    <main
+        class="wedding-card"
+        id="mainCard"
+    >
 
 
         <!-- ==================================================
@@ -1225,11 +1355,11 @@
             <div class="opening-poem">
 
                 <div class="poem-line">
-                    کنون  که  موسم  وصل  است   و   ما  همه  جمعیم،
+                    کنون که موسم وصل است و ما همه جمعیم،
                 </div>
 
                 <div class="poem-line">
-                    خدا  کند  که  بیایی   و   وصل  ما  بینی
+                    خدا کند که بیایی و وصل ما بینی
                 </div>
 
                 <div class="poem-line ya-saheb">
@@ -1314,6 +1444,65 @@
 
 
 
+            <!-- ==================================================
+                 تاریخ و ساعت - بالای تایمر
+            ================================================== -->
+
+            <div class="event-info">
+
+
+                <div class="event-item">
+
+                    <span class="event-label">
+                        تاریخ
+                    </span>
+
+                    <span class="event-value">
+                        چهارشنبه ۲۲ مهر ۱۴۰۵
+                    </span>
+
+                </div>
+
+
+
+                <div class="event-item">
+
+                    <span class="event-label">
+                        ساعت
+                    </span>
+
+                    <span class="event-value">
+                        ۱۸:۰۰ تا پایان شب
+                    </span>
+
+                </div>
+
+
+
+                <div class="event-item">
+
+                    <span class="event-label">
+                        مکان
+                    </span>
+
+                    <span class="event-value">
+                        وکیل‌آباد۷۰، بلوار شهید برونسی،
+                        مجتمع هویزه، تالار گل مریم
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 تایمر
+                 ترتیب از چپ:
+                 روز - ساعت - دقیقه - ثانیه
+            ================================================== -->
+
             <div class="countdown">
 
 
@@ -1388,58 +1577,27 @@
 
 
 
-            <div class="event-info">
+            <!-- ==================================================
+                 پیام پایانی اول
+            ================================================== -->
 
+            <div class="final-message">
 
-                <div class="event-item">
-
-                    <span class="event-label">
-                        تاریخ
-                    </span>
-
-                    <span class="event-value">
-                        چهارشنبه ۲۲ مهر ۱۴۰۵
-                    </span>
-
-                </div>
-
-
-
-                <div class="event-item">
-
-                    <span class="event-label">
-                        ساعت
-                    </span>
-
-                    <span class="event-value">
-                        ۱۸:۰۰ تا پایان شب
-                    </span>
-
-                </div>
-
-
-
-                <div class="event-item">
-
-                    <span class="event-label">
-                        مکان
-                    </span>
-
-                    <span class="event-value">
-                        وکیل‌آباد۷۰، بلوار شهید برونسی،
-                        مجتمع هویزه، تالار گل مریم
-                    </span>
-
-                </div>
-
+                منتظر حضور گرم شما عزیزان هستیم.
 
             </div>
 
 
 
-            <div class="final-message">
+            <!-- ==================================================
+                 پیام عدم حضور
+            ================================================== -->
 
-                منتظر حضور گرم شما عزیزان هستیم.
+            <div class="absence-message">
+
+                در صورت عدم حضور لطفا تا 48 ساعت آینده اطلاع دهید.
+                <br>
+                با تشکر
 
             </div>
 
@@ -1463,6 +1621,7 @@
                 "introScreen"
             );
 
+
         const mainCard =
             document.getElementById(
                 "mainCard"
@@ -1478,8 +1637,13 @@
                 function () {
 
                     window.scrollTo({
-                        top: mainCard.offsetTop,
-                        behavior: "smooth"
+
+                        top:
+                            mainCard.offsetTop,
+
+                        behavior:
+                            "smooth"
+
                     });
 
                 },
@@ -1523,7 +1687,9 @@
                     entries.forEach(
                         function(entry) {
 
-                            if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
                                 invitationSection
                                     .classList
@@ -1567,7 +1733,9 @@
                     entries.forEach(
                         function(entry) {
 
-                            if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
                                 countdownSection
                                     .classList
@@ -1608,16 +1776,26 @@
             const now =
                 new Date().getTime();
 
+
             const difference =
                 weddingDate - now;
 
 
-            if (difference <= 0) {
+            if (
+                difference <= 0
+            ) {
 
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
+                document.getElementById("days").innerText =
+                    "00";
+
+                document.getElementById("hours").innerText =
+                    "00";
+
+                document.getElementById("minutes").innerText =
+                    "00";
+
+                document.getElementById("seconds").innerText =
+                    "00";
 
                 return;
             }
@@ -1663,11 +1841,14 @@
             document.getElementById("days").innerText =
                 String(days).padStart(2, "0");
 
+
             document.getElementById("hours").innerText =
                 String(hours).padStart(2, "0");
 
+
             document.getElementById("minutes").innerText =
                 String(minutes).padStart(2, "0");
+
 
             document.getElementById("seconds").innerText =
                 String(seconds).padStart(2, "0");
@@ -1762,7 +1943,8 @@
                 "playing"
             );
 
-            musicBtn.innerHTML = "♫";
+            musicBtn.innerHTML =
+                "♫";
 
         }
 
@@ -1773,7 +1955,8 @@
                 "playing"
             );
 
-            musicBtn.innerHTML = "♪";
+            musicBtn.innerHTML =
+                "♪";
 
         }
 
@@ -1783,6 +1966,7 @@
             function () {
 
                 bgMusic.play()
+
                     .then(
                         function () {
 
@@ -1790,6 +1974,7 @@
 
                         }
                     )
+
                     .catch(
                         function () {
 
@@ -1806,9 +1991,12 @@
             "click",
             function () {
 
-                if (bgMusic.paused) {
+                if (
+                    bgMusic.paused
+                ) {
 
                     bgMusic.play()
+
                         .then(
                             function () {
 
@@ -1816,6 +2004,7 @@
 
                             }
                         )
+
                         .catch(
                             function () {
 
