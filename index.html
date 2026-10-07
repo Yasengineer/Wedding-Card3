@@ -107,6 +107,8 @@
             text-shadow:
                 0 1px 3px
                 rgba(255,255,255,0.7);
+
+            word-spacing: 0.75em;
         }
 
 
@@ -189,7 +191,7 @@
 
             justify-content: flex-start;
 
-            padding-top: 18vh;
+            padding-top: 40vh;
 
             padding-bottom: 5vh;
 
@@ -236,6 +238,8 @@
                 topBismAppear 1.8s
                 ease-out
                 forwards;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -271,6 +275,8 @@
             overflow-wrap: anywhere;
 
             word-break: normal;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -319,6 +325,8 @@
             font-size: 55px;
 
             letter-spacing: 1px;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -417,6 +425,8 @@
                 translateY(25px);
 
             overflow-wrap: anywhere;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -441,6 +451,8 @@
                 translateY(25px);
 
             overflow-wrap: anywhere;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -474,6 +486,8 @@
             overflow-wrap: anywhere;
 
             word-break: normal;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -510,6 +524,60 @@
 
             animation-delay:
                 0.7s;
+        }
+
+
+
+        /* ==================================================
+           پیام عدم حضور
+           بعد از متن دعوت
+           قبل از خط طلایی
+        ================================================== */
+
+        .absence-message {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            margin-top: 3em;
+
+            margin-bottom: 3vh;
+
+            padding-left: 10px;
+
+            padding-right: 10px;
+
+            text-align: center;
+
+            font-family:
+                "IranNastaliq",
+                serif;
+
+            font-size: 35px;
+
+            line-height: 1.8;
+
+            color: #74515a;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            word-spacing: 0.75em;
+        }
+
+
+        .invitation-section.show .absence-message {
+
+            animation:
+                sectionAppear 1.5s
+                ease-out
+                forwards;
+
+            animation-delay:
+                1.2s;
         }
 
 
@@ -660,6 +728,8 @@
             color: #a17a83;
 
             margin-bottom: 5px;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -686,6 +756,8 @@
             overflow-wrap: anywhere;
 
             word-break: normal;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -714,6 +786,8 @@
             overflow-wrap: anywhere;
 
             order: 2;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -734,11 +808,6 @@
 
         .final-message {
             order: 5;
-        }
-
-
-        .absence-message {
-            order: 6;
         }
 
 
@@ -843,6 +912,8 @@
             white-space: normal;
 
             overflow-wrap: anywhere;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -882,6 +953,8 @@
             color: #a17a83;
 
             margin-bottom: 5px;
+
+            word-spacing: 0.75em;
         }
 
 
@@ -902,12 +975,15 @@
             color: #684852;
 
             overflow-wrap: anywhere;
+
+            word-spacing: 0.75em;
         }
 
 
 
         /* ==================================================
-           پیام‌های پایانی
+           پیام پایانی
+           ۴ خط بعد از آدرس
         ================================================== */
 
         .final-message {
@@ -916,7 +992,7 @@
 
             max-width: 100%;
 
-            margin-top: 60px;
+            margin-top: 4em;
 
             margin-bottom: 35px;
 
@@ -935,52 +1011,8 @@
             line-height: 1.8;
 
             color: #74515a;
-        }
 
-
-        .absence-message {
-
-            width: 100%;
-
-            max-width: 100%;
-
-            /* فاصله حدود ۵ خط از متن قبلی */
-            margin-top: 5em;
-
-            margin-bottom: 100px;
-
-            padding-left: 10px;
-
-            padding-right: 10px;
-
-            text-align: center;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 35px;
-
-            line-height: 1.8;
-
-            color: #74515a;
-
-            opacity: 0;
-
-            transform:
-                translateY(30px);
-        }
-
-
-        .countdown-section.show .absence-message {
-
-            animation:
-                sectionAppear 1.5s
-                ease-out
-                forwards;
-
-            animation-delay:
-                1.6s;
+            word-spacing: 0.75em;
         }
 
 
@@ -1156,6 +1188,22 @@
             }
 
 
+            .absence-message {
+
+                font-size: 31px;
+
+                margin-top: 3em;
+
+                margin-bottom: 3vh;
+
+                padding-left: 5px;
+
+                padding-right: 5px;
+
+                line-height: 1.8;
+            }
+
+
             .countdown-section {
 
                 padding-top: 3vh;
@@ -1268,24 +1316,9 @@
 
                 font-size: 31px;
 
-                margin-top: 50px;
+                margin-top: 4em;
 
                 margin-bottom: 25px;
-
-                padding-left: 5px;
-
-                padding-right: 5px;
-            }
-
-
-            .absence-message {
-
-                font-size: 31px;
-
-                /* در موبایل هم حدود ۵ خط فاصله */
-                margin-top: 5em;
-
-                margin-bottom: 80px;
 
                 padding-left: 5px;
 
@@ -1469,7 +1502,7 @@
                 </div>
 
                 <div class="poem-line">
-                    خدا کند که بیایی و وصل ما بینی
+                    خدا کند که بیاییُ وصل ما بینی
                 </div>
 
                 <div class="poem-line ya-saheb">
@@ -1508,7 +1541,7 @@
 
             <div class="invitation-text">
 
-                زندگی‌مان را با توکل به خدا و ائمه آغاز می‌کنیم
+                زندگی‌مان را با توکل به خدا و ائمه(ع) آغاز می‌کنیم
 
                 <br>
 
@@ -1527,6 +1560,20 @@
                 با حضورتان گرما‌بخش مراسم ما باشید.
 
             </div>
+
+
+            <!-- پیام عدم حضور -->
+
+            <div class="absence-message">
+
+                در صورت عدم حضور لطفا تا ۴۸ ساعت آینده اطلاع دهید.
+
+                <br>
+
+                با تشکر
+
+            </div>
+
 
         </section>
 
@@ -1570,7 +1617,7 @@
                     </span>
 
                     <span class="event-value">
-                        ۱۸:۰۰ تا پایان شب
+                        ۱۸:۰۰ تا ۲۱:۳۰
                     </span>
 
                 </div>
@@ -1681,20 +1728,6 @@
             <div class="final-message">
 
                 منتظر حضور گرم شما عزیزان هستیم.
-
-            </div>
-
-
-
-            <!-- پیام عدم حضور -->
-
-            <div class="absence-message">
-
-                در صورت عدم حضور لطفا تا ۴۸ ساعت آینده اطلاع دهید.
-
-                <br>
-
-                با تشکر
 
             </div>
 
