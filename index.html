@@ -1,2098 +1,2130 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>به شوق آغاز یک زندگی تازه</title>
+<title>به شوق آغاز یک زندگی تازه</title>
 
-    <style>
+<style>
 
-        @font-face {
-            font-family: "IranNastaliq";
-            src: url("IranNastaliq.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: "IranNastaliq";
+        src: url("IranNastaliq.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            width: 100%;
-            min-height: 100%;
-            overflow-x: hidden;
-            background: #f4dfe2;
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-        }
-
-
-        /* ==================================================
-           صفحه افتتاحیه
-        ================================================== */
-
-        .intro-screen {
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100vh;
-
-            z-index: 10000;
-
-            background-image:
-                url("back 2.png");
-
-            background-size:
-                cover;
-
-            background-position:
-                center;
-
-            background-repeat:
-                no-repeat;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: center;
-
-            padding-bottom: 12vh;
-
-            cursor: pointer;
-
-            transition:
-                opacity 1.2s ease,
-                transform 1.2s ease;
-        }
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+        background: #f4dfe2;
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+    }
 
 
-        .intro-text {
+    /* ==================================================
+       صفحه افتتاحیه
+       فقط محو می‌شود و هیچ حرکتی ندارد
+    ================================================== */
 
-            font-family:
-                "IranNastaliq",
-                serif;
+    .intro-screen {
 
-            font-size: 32px;
+        position: fixed;
 
-            color: #74515a;
+        top: 0;
+        left: 0;
 
-            text-align: center;
+        width: 100%;
+        height: 100vh;
 
-            opacity: 0;
+        z-index: 10000;
 
-            animation:
-                introTextAppear 2s
-                ease-out
-                1s
-                forwards;
+        background-image:
+            url("back 2.png");
 
-            text-shadow:
-                0 1px 3px
-                rgba(255,255,255,0.7);
+        background-size:
+            cover;
 
-            word-spacing: 0.5em;
-        }
+        background-position:
+            center;
+
+        background-repeat:
+            no-repeat;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: center;
+
+        padding-bottom: 12vh;
+
+        cursor: pointer;
+
+        /* فقط شفافیت تغییر می‌کند */
+        opacity: 1;
+
+        transition:
+            opacity 1.5s ease;
+    }
 
 
-        .intro-screen.hide {
+    .intro-text {
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 32px;
+
+        color: #74515a;
+
+        text-align: center;
+
+        opacity: 0;
+
+        animation:
+            introTextAppear 2s
+            ease-out
+            1s
+            forwards;
+
+        text-shadow:
+            0 1px 3px
+            rgba(255,255,255,0.7);
+
+        word-spacing: 0.5em;
+
+        transition:
+            opacity 1.2s ease;
+    }
+
+
+    /* صفحه افتتاحیه بعد از کلیک
+       فقط محو می‌شود */
+
+    .intro-screen.hide {
+
+        opacity: 0;
+
+        pointer-events: none;
+    }
+
+
+    /* متن هم جداگانه محو می‌شود */
+
+    .intro-screen.hide .intro-text {
+
+        opacity: 0;
+    }
+
+
+    @keyframes introTextAppear {
+
+        0% {
 
             opacity: 0;
 
             transform:
-                translateY(-100%);
-
-            pointer-events: none;
+                translateY(20px);
         }
 
+        100% {
 
-        @keyframes introTextAppear {
+            opacity: 1;
 
-            0% {
-
-                opacity: 0;
-
-                transform:
-                    translateY(20px);
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
+            transform:
+                translateY(0);
         }
+    }
 
 
 
-        /* ==================================================
-           کل کارت اصلی
-        ================================================== */
+    /* ==================================================
+       کل کارت اصلی
+    ================================================== */
 
-        .wedding-card {
+    .wedding-card {
 
-            width: 100%;
-            max-width: 100%;
+        width: 100%;
+        max-width: 100%;
 
-            min-height: 180vw;
+        min-height: 180vw;
 
-            position: relative;
+        position: relative;
 
-            overflow: hidden;
+        overflow: hidden;
 
-            background-image:
-                url("back 1.png");
+        background-image:
+            url("back 1.png");
 
-            background-size:
-                100% auto;
+        background-size:
+            100% auto;
 
-            background-repeat:
-                repeat-y;
+        background-repeat:
+            repeat-y;
 
-            background-position:
-                top center;
-        }
-
-
-
-        /* ==================================================
-           بخش اول
-        ================================================== */
-
-        .opening-section {
-
-            width: 100%;
-            max-width: 100%;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            justify-content: flex-start;
-
-            padding-top: 40vh;
-
-            padding-bottom: 5vh;
-
-            padding-left: 20px;
-
-            padding-right: 20px;
-
-            text-align: center;
-
-            overflow: hidden;
-        }
+        background-position:
+            top center;
+    }
 
 
 
-        /* ==================================================
-           بسم رب العشق
-        ================================================== */
+    /* ==================================================
+       بخش اول
+    ================================================== */
 
-        .top-bism {
+    .opening-section {
 
-            width: 100%;
-            max-width: 100%;
+        width: 100%;
+        max-width: 100%;
 
-            font-family:
-                "IranNastaliq",
-                serif;
+        display: flex;
 
-            font-size: 55px;
+        flex-direction: column;
 
-            color: #74515a;
+        align-items: center;
 
-            line-height: 1.5;
+        justify-content: flex-start;
 
-            text-align: center;
+        padding-top: 40vh;
 
-            margin-bottom: 8vh;
+        padding-bottom: 5vh;
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+        text-align: center;
+
+        overflow: hidden;
+    }
+
+
+
+    /* ==================================================
+       بسم رب العشق
+    ================================================== */
+
+    .top-bism {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 55px;
+
+        color: #74515a;
+
+        line-height: 1.5;
+
+        text-align: center;
+
+        margin-bottom: 8vh;
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+        animation:
+            topBismAppear 1.8s
+            ease-out
+            forwards;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       شعر
+    ================================================== */
+
+    .opening-poem {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 0;
+
+        margin-bottom: 4vh;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        color: #74515a;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 40px;
+
+        line-height: 1.6;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .poem-line {
+
+        width: 100%;
+        max-width: 100%;
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+        animation:
+            poemAppear 1.8s
+            ease-out
+            forwards;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    .poem-line:nth-child(1) {
+        animation-delay: 1s;
+    }
+
+
+    .poem-line:nth-child(2) {
+        animation-delay: 1.8s;
+    }
+
+
+    .poem-line:nth-child(3) {
+        animation-delay: 2.6s;
+    }
+
+
+    .ya-saheb {
+
+        margin-top: 10px;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 55px;
+
+        letter-spacing: 1px;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       خط طلایی
+    ================================================== */
+
+    .section-divider {
+
+        width: 0;
+
+        max-width: 75%;
+
+        height: 2px;
+
+        background:
+            linear-gradient(
+                to right,
+                transparent,
+                #c9a45c,
+                transparent
+            );
+
+        margin:
+            0 auto;
+
+        opacity: 0;
+
+        transition:
+            width 1.5s ease,
+            opacity 0.8s ease;
+    }
+
+
+    .section-divider.show {
+
+        width: 75%;
+
+        opacity: 1;
+    }
+
+
+
+    /* ==================================================
+       بخش دعوت
+    ================================================== */
+
+    .invitation-section {
+
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            5vh
+            20px
+            4vh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        overflow: hidden;
+    }
+
+
+    .couple-name {
+
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 60px;
+
+        font-weight: 500;
+
+        color: #684852;
+
+        line-height: 1;
+
+        margin-top: 30px;
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        overflow-wrap: anywhere;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .family-name {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 40px;
+
+        color: #8a656d;
+
+        margin-top: 15px;
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        overflow-wrap: anywhere;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .invitation-text {
+
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        margin-top: 35px;
+
+        margin-bottom: 5px;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 35px;
+
+        line-height: 1.7;
+
+        color: #76535c;
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .invitation-section.show .couple-name {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.1s;
+    }
+
+
+    .invitation-section.show .family-name {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.4s;
+    }
+
+
+    .invitation-section.show .invitation-text {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.7s;
+    }
+
+
+
+    /* ==================================================
+       پیام عدم حضور
+    ================================================== */
+
+    .absence-message {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 3em;
+
+        margin-bottom: 3vh;
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+        text-align: center;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 35px;
+
+        line-height: 1.8;
+
+        color: #74515a;
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+        word-spacing: 0.5em;
+    }
+
+
+    .invitation-section.show .absence-message {
+
+        animation:
+            sectionAppear 1.5s
+            ease-out
+            forwards;
+
+        animation-delay:
+            1.2s;
+    }
+
+
+
+    /* ==================================================
+       بخش سوم
+    ================================================== */
+
+    .countdown-section {
+
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            5vh
+            15px
+            5vh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        overflow: hidden;
+    }
+
+
+    .countdown-title,
+    .countdown,
+    .event-info,
+    .final-message {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+
+    .countdown-section.show .countdown-title {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.5s;
+    }
+
+
+    .countdown-section.show .event-info {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.1s;
+    }
+
+
+    .countdown-section.show .countdown {
+
+        animation:
+            sectionAppear 1.4s
+            ease-out
+            forwards;
+
+        animation-delay:
+            0.9s;
+    }
+
+
+    .countdown-section.show .final-message {
+
+        animation:
+            sectionAppear 1.5s
+            ease-out
+            forwards;
+
+        animation-delay:
+            1.3s;
+    }
+
+
+
+    /* ==================================================
+       تاریخ و ساعت کنار هم
+    ================================================== */
+
+    .event-info {
+
+        width: 100%;
+
+        max-width: 600px;
+
+        margin-top: 20px;
+
+        margin-bottom: 10px;
+
+        text-align: center;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .event-item {
+
+        flex: 1;
+
+        min-width: 0;
+
+        overflow: hidden;
+
+        text-align: center;
+    }
+
+
+    .event-label {
+
+        display: block;
+
+        width: 100%;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 28px;
+
+        color: #a17a83;
+
+        margin-bottom: 5px;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .event-value {
+
+        display: block;
+
+        width: 100%;
+
+        padding-left: 3px;
+
+        padding-right: 3px;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 31px;
+
+        line-height: 1.5;
+
+        color: #684852;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       عنوان تا آغاز این شب زیبا
+    ================================================== */
+
+    .countdown-title {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 38px;
+
+        color: #74515a;
+
+        margin-top: 45px;
+
+        margin-bottom: 25px;
+
+        overflow-wrap: anywhere;
+
+        order: 2;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .event-info {
+        order: 1;
+    }
+
+
+    .countdown {
+        order: 3;
+    }
+
+
+    .address-info {
+        order: 4;
+    }
+
+
+    .final-message {
+        order: 5;
+    }
+
+
+
+    /* ==================================================
+       باکس‌های تایمر
+    ================================================== */
+
+    .countdown {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        display: flex;
+
+        direction: ltr;
+
+        justify-content: center;
+
+        align-items: stretch;
+
+        gap: 6px;
+
+        padding-left: 2px;
+        padding-right: 2px;
+
+        overflow: hidden;
+
+        margin-bottom: 20px;
+    }
+
+
+    .time-box {
+
+        flex: 0 0 70px;
+
+        width: 70px;
+
+        min-width: 70px;
+
+        max-width: 70px;
+
+        padding:
+            12px
+            2px;
+
+        border:
+            1px solid
+            rgba(180, 140, 80, 0.35);
+
+        border-radius: 10px;
+
+        background:
+            rgba(255, 255, 255, 0.18);
+
+        backdrop-filter:
+            blur(2px);
+
+        overflow: hidden;
+
+        text-align: center;
+    }
+
+
+    .time-number {
+
+        display: block;
+
+        width: 100%;
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size:
+            clamp(22px, 7vw, 34px);
+
+        color: #684852;
+
+        white-space: nowrap;
+    }
+
+
+    .time-label {
+
+        display: block;
+
+        width: 100%;
+
+        margin-top: 10px;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 21px;
+
+        color: #8a656d;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       آدرس
+    ================================================== */
+
+    .address-info {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 25px;
+
+        margin-bottom: 20px;
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+        text-align: center;
+    }
+
+
+    .address-label {
+
+        display: block;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 28px;
+
+        color: #a17a83;
+
+        margin-bottom: 5px;
+
+        word-spacing: 0.5em;
+    }
+
+
+    .address-value {
+
+        display: block;
+
+        width: 100%;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 32px;
+
+        line-height: 1.6;
+
+        color: #684852;
+
+        overflow-wrap: anywhere;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       پیام پایانی
+    ================================================== */
+
+    .final-message {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 4em;
+
+        margin-bottom: 35px;
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+        text-align: center;
+
+        font-family:
+            "IranNastaliq",
+            serif;
+
+        font-size: 35px;
+
+        line-height: 1.8;
+
+        color: #74515a;
+
+        word-spacing: 0.5em;
+    }
+
+
+
+    /* ==================================================
+       انیمیشن ها
+    ================================================== */
+
+    @keyframes topBismAppear {
+
+        0% {
 
             opacity: 0;
 
             transform:
                 translateY(20px);
 
-            animation:
-                topBismAppear 1.8s
-                ease-out
-                forwards;
-
-            word-spacing: 0.5em;
+            filter:
+                blur(5px);
         }
 
+        100% {
 
+            opacity: 1;
 
-        /* ==================================================
-           شعر
-        ================================================== */
+            transform:
+                translateY(0);
 
-        .opening-poem {
-
-            width: 100%;
-            max-width: 100%;
-
-            margin-top: 0;
-
-            margin-bottom: 4vh;
-
-            padding-left: 5px;
-            padding-right: 5px;
-
-            color: #74515a;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 40px;
-
-            line-height: 1.6;
-
-            text-align: center;
-
-            overflow-wrap: anywhere;
-
-            word-break: normal;
-
-            word-spacing: 0.5em;
+            filter:
+                blur(0);
         }
+    }
 
 
-        .poem-line {
+    @keyframes poemAppear {
 
-            width: 100%;
-            max-width: 100%;
+        0% {
 
             opacity: 0;
 
             transform:
                 translateY(15px);
 
-            animation:
-                poemAppear 1.8s
-                ease-out
-                forwards;
+            filter:
+                blur(4px);
+        }
 
-            overflow-wrap: anywhere;
+        100% {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            filter:
+                blur(0);
+        }
+    }
+
+
+    @keyframes sectionAppear {
+
+        0% {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            filter:
+                blur(4px);
+        }
+
+        100% {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            filter:
+                blur(0);
+        }
+    }
+
+
+
+    /* ==================================================
+       موبایل‌های کوچک
+    ================================================== */
+
+    @media (max-width: 380px) {
+
+        .opening-section {
+
+            padding-top: 14vh;
+
+            padding-bottom: 3vh;
+
+            padding-left: 15px;
+
+            padding-right: 15px;
         }
 
 
-        .poem-line:nth-child(1) {
-            animation-delay: 1s;
+        .top-bism {
+
+            font-size: 46px;
+
+            margin-bottom: 6vh;
         }
 
 
-        .poem-line:nth-child(2) {
-            animation-delay: 1.8s;
-        }
+        .opening-poem {
 
+            margin-bottom: 2vh;
 
-        .poem-line:nth-child(3) {
-            animation-delay: 2.6s;
+            font-size: 34px;
+
+            padding-left: 2px;
+
+            padding-right: 2px;
         }
 
 
         .ya-saheb {
 
-            margin-top: 10px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 55px;
-
-            letter-spacing: 1px;
-
-            word-spacing: 0.5em;
+            font-size: 46px;
         }
 
 
+        .intro-text {
 
-        /* ==================================================
-           خط طلایی
-        ================================================== */
-
-        .section-divider {
-
-            width: 0;
-
-            max-width: 75%;
-
-            height: 2px;
-
-            background:
-                linear-gradient(
-                    to right,
-                    transparent,
-                    #c9a45c,
-                    transparent
-                );
-
-            margin:
-                0 auto;
-
-            opacity: 0;
-
-            transition:
-                width 1.5s ease,
-                opacity 0.8s ease;
+            font-size: 28px;
         }
 
-
-        .section-divider.show {
-
-            width: 75%;
-
-            opacity: 1;
-        }
-
-
-
-        /* ==================================================
-           بخش دعوت
-        ================================================== */
 
         .invitation-section {
 
-            width: 100%;
-            max-width: 100%;
+            padding-top: 4vh;
 
-            padding:
-                5vh
-                20px
-                4vh;
+            padding-bottom: 3vh;
 
-            display: flex;
+            padding-left: 12px;
 
-            flex-direction: column;
-
-            align-items: center;
-
-            text-align: center;
-
-            overflow: hidden;
+            padding-right: 12px;
         }
 
 
         .couple-name {
 
-            width: 100%;
-            max-width: 100%;
+            font-size: 55px;
 
-            padding-left: 5px;
-            padding-right: 5px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 60px;
-
-            font-weight: 500;
-
-            color: #684852;
-
-            line-height: 1;
-
-            margin-top: 30px;
-
-            opacity: 0;
-
-            transform:
-                translateY(25px);
-
-            overflow-wrap: anywhere;
-
-            word-spacing: 0.5em;
+            line-height: 1.1;
         }
 
 
         .family-name {
 
-            width: 100%;
-            max-width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 40px;
-
-            color: #8a656d;
-
-            margin-top: 15px;
-
-            opacity: 0;
-
-            transform:
-                translateY(25px);
-
-            overflow-wrap: anywhere;
-
-            word-spacing: 0.5em;
+            font-size: 34px;
         }
 
 
         .invitation-text {
 
-            width: 100%;
-            max-width: 100%;
+            font-size: 31px;
 
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: 2px;
 
-            margin-top: 35px;
-
-            margin-bottom: 5px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 35px;
+            padding-right: 2px;
 
             line-height: 1.7;
-
-            color: #76535c;
-
-            opacity: 0;
-
-            transform:
-                translateY(25px);
-
-            overflow-wrap: anywhere;
-
-            word-break: normal;
-
-            word-spacing: 0.5em;
         }
 
-
-        .invitation-section.show .couple-name {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.1s;
-        }
-
-
-        .invitation-section.show .family-name {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.4s;
-        }
-
-
-        .invitation-section.show .invitation-text {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.7s;
-        }
-
-
-
-        /* ==================================================
-           پیام عدم حضور
-           بعد از متن دعوت
-           قبل از خط طلایی
-        ================================================== */
 
         .absence-message {
 
-            width: 100%;
-
-            max-width: 100%;
+            font-size: 31px;
 
             margin-top: 3em;
 
             margin-bottom: 3vh;
 
-            padding-left: 10px;
+            padding-left: 5px;
 
-            padding-right: 10px;
-
-            text-align: center;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 35px;
+            padding-right: 5px;
 
             line-height: 1.8;
-
-            color: #74515a;
-
-            opacity: 0;
-
-            transform:
-                translateY(30px);
-
-            word-spacing: 0.5em;
         }
 
-
-        .invitation-section.show .absence-message {
-
-            animation:
-                sectionAppear 1.5s
-                ease-out
-                forwards;
-
-            animation-delay:
-                1.2s;
-        }
-
-
-
-        /* ==================================================
-           بخش سوم
-        ================================================== */
 
         .countdown-section {
 
-            width: 100%;
-            max-width: 100%;
+            padding-top: 3vh;
 
-            padding:
-                5vh
-                15px
-                5vh;
+            padding-bottom: 3vh;
 
-            display: flex;
+            padding-left: 8px;
 
-            flex-direction: column;
-
-            align-items: center;
-
-            text-align: center;
-
-            overflow: hidden;
+            padding-right: 8px;
         }
 
-
-        .countdown-title,
-        .countdown,
-        .event-info,
-        .final-message {
-
-            opacity: 0;
-
-            transform:
-                translateY(30px);
-        }
-
-
-        .countdown-section.show .countdown-title {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.5s;
-        }
-
-
-        .countdown-section.show .event-info {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.1s;
-        }
-
-
-        .countdown-section.show .countdown {
-
-            animation:
-                sectionAppear 1.4s
-                ease-out
-                forwards;
-
-            animation-delay:
-                0.9s;
-        }
-
-
-        .countdown-section.show .final-message {
-
-            animation:
-                sectionAppear 1.5s
-                ease-out
-                forwards;
-
-            animation-delay:
-                1.3s;
-        }
-
-
-
-        /* ==================================================
-           تاریخ و ساعت کنار هم
-        ================================================== */
 
         .event-info {
 
-            width: 100%;
+            gap: 8px;
 
-            max-width: 600px;
-
-            margin-top: 20px;
-
-            margin-bottom: 10px;
-
-            text-align: center;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            display: flex;
-
-            flex-direction: row;
-
-            justify-content: center;
-
-            align-items: flex-start;
-
-            gap: 15px;
-        }
-
-
-        .event-item {
-
-            flex: 1;
-
-            min-width: 0;
-
-            overflow: hidden;
-
-            text-align: center;
+            max-width: 100%;
         }
 
 
         .event-label {
 
-            display: block;
-
-            width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 28px;
-
-            color: #a17a83;
-
-            margin-bottom: 5px;
-
-            word-spacing: 0.5em;
+            font-size: 24px;
         }
 
 
         .event-value {
 
-            display: block;
-
-            width: 100%;
-
-            padding-left: 3px;
-
-            padding-right: 3px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 31px;
+            font-size: 27px;
 
             line-height: 1.5;
-
-            color: #684852;
-
-            overflow-wrap: anywhere;
-
-            word-break: normal;
-
-            word-spacing: 0.5em;
         }
 
-
-
-        /* ==================================================
-           عنوان تا آغاز این شب زیبا
-        ================================================== */
 
         .countdown-title {
 
-            width: 100%;
-            max-width: 100%;
+            font-size: 34px;
 
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 38px;
-
-            color: #74515a;
-
-            margin-top: 45px;
-
-            margin-bottom: 25px;
-
-            overflow-wrap: anywhere;
-
-            order: 2;
-
-            word-spacing: 0.5em;
-        }
-
-
-        .event-info {
-            order: 1;
-        }
-
-
-        .countdown {
-            order: 3;
-        }
-
-
-        .address-info {
-            order: 4;
-        }
-
-
-        .final-message {
-            order: 5;
-        }
-
-
-
-        /* ==================================================
-           باکس‌های تایمر
-        ================================================== */
-
-        .countdown {
-
-            width: 100%;
-
-            max-width: 100%;
-
-            display: flex;
-
-            direction: ltr;
-
-            justify-content: center;
-
-            align-items: stretch;
-
-            gap: 6px;
-
-            padding-left: 2px;
-            padding-right: 2px;
-
-            overflow: hidden;
+            margin-top: 35px;
 
             margin-bottom: 20px;
+        }
+
+
+        .countdown {
+
+            gap: 3px;
+
+            padding-left: 0;
+
+            padding-right: 0;
         }
 
 
         .time-box {
 
-            flex: 0 0 70px;
+            flex: 0 0 68px;
 
-            width: 70px;
+            width: 68px;
 
-            min-width: 70px;
+            min-width: 68px;
 
-            max-width: 70px;
+            max-width: 68px;
 
             padding:
-                12px
-                2px;
+                11px
+                1px;
 
-            border:
-                1px solid
-                rgba(180, 140, 80, 0.35);
-
-            border-radius: 10px;
-
-            background:
-                rgba(255, 255, 255, 0.18);
-
-            backdrop-filter:
-                blur(2px);
-
-            overflow: hidden;
-
-            text-align: center;
+            border-radius: 9px;
         }
 
 
         .time-number {
 
-            display: block;
-
-            width: 100%;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size:
-                clamp(22px, 7vw, 34px);
-
-            color: #684852;
-
-            white-space: nowrap;
+            font-size: 25px;
         }
 
 
         .time-label {
 
-            display: block;
-
-            width: 100%;
-
-            margin-top: 10px;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 21px;
-
-            color: #8a656d;
-
-            white-space: normal;
-
-            overflow-wrap: anywhere;
-
-            word-spacing: 0.5em;
+            font-size: 20px;
         }
 
 
-
-        /* ==================================================
-           آدرس زیر تایمر
-        ================================================== */
-
         .address-info {
 
-            width: 100%;
+            margin-top: 20px;
 
-            max-width: 100%;
+            padding-left: 5px;
 
-            margin-top: 25px;
-
-            margin-bottom: 20px;
-
-            padding-left: 10px;
-
-            padding-right: 10px;
-
-            text-align: center;
+            padding-right: 5px;
         }
 
 
         .address-label {
 
-            display: block;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 28px;
-
-            color: #a17a83;
-
-            margin-bottom: 5px;
-
-            word-spacing: 0.5em;
+            font-size: 25px;
         }
 
 
         .address-value {
 
-            display: block;
-
-            width: 100%;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 32px;
+            font-size: 29px;
 
             line-height: 1.6;
-
-            color: #684852;
-
-            overflow-wrap: anywhere;
-
-            word-spacing: 0.5em;
         }
 
-
-
-        /* ==================================================
-           پیام پایانی
-           ۴ خط بعد از آدرس
-        ================================================== */
 
         .final-message {
 
-            width: 100%;
-
-            max-width: 100%;
+            font-size: 31px;
 
             margin-top: 4em;
 
-            margin-bottom: 35px;
+            margin-bottom: 25px;
 
-            padding-left: 10px;
+            padding-left: 5px;
 
-            padding-right: 10px;
-
-            text-align: center;
-
-            font-family:
-                "IranNastaliq",
-                serif;
-
-            font-size: 35px;
-
-            line-height: 1.8;
-
-            color: #74515a;
-
-            word-spacing: 0.5em;
+            padding-right: 5px;
         }
 
-
-
-        /* ==================================================
-           انیمیشن ها
-        ================================================== */
-
-        @keyframes topBismAppear {
-
-            0% {
-
-                opacity: 0;
-
-                transform:
-                    translateY(20px);
-
-                filter:
-                    blur(5px);
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-                filter:
-                    blur(0);
-            }
-        }
-
-
-        @keyframes poemAppear {
-
-            0% {
-
-                opacity: 0;
-
-                transform:
-                    translateY(15px);
-
-                filter:
-                    blur(4px);
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-                filter:
-                    blur(0);
-            }
-        }
-
-
-        @keyframes sectionAppear {
-
-            0% {
-
-                opacity: 0;
-
-                transform:
-                    translateY(30px);
-
-                filter:
-                    blur(4px);
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-                filter:
-                    blur(0);
-            }
-        }
-
-
-
-        /* ==================================================
-           موبایل‌های کوچک
-        ================================================== */
-
-        @media (max-width: 380px) {
-
-            .opening-section {
-
-                padding-top: 14vh;
-
-                padding-bottom: 3vh;
-
-                padding-left: 15px;
-
-                padding-right: 15px;
-            }
-
-
-            .top-bism {
-
-                font-size: 46px;
-
-                margin-bottom: 6vh;
-            }
-
-
-            .opening-poem {
-
-                margin-bottom: 2vh;
-
-                font-size: 34px;
-
-                padding-left: 2px;
-
-                padding-right: 2px;
-            }
-
-
-            .ya-saheb {
-
-                font-size: 46px;
-            }
-
-
-            .intro-text {
-
-                font-size: 28px;
-            }
-
-
-            .invitation-section {
-
-                padding-top: 4vh;
-
-                padding-bottom: 3vh;
-
-                padding-left: 12px;
-
-                padding-right: 12px;
-            }
-
-
-            .couple-name {
-
-                font-size: 55px;
-
-                line-height: 1.1;
-            }
-
-
-            .family-name {
-
-                font-size: 34px;
-            }
-
-
-            .invitation-text {
-
-                font-size: 31px;
-
-                padding-left: 2px;
-
-                padding-right: 2px;
-
-                line-height: 1.7;
-            }
-
-
-            .absence-message {
-
-                font-size: 31px;
-
-                margin-top: 3em;
-
-                margin-bottom: 3vh;
-
-                padding-left: 5px;
-
-                padding-right: 5px;
-
-                line-height: 1.8;
-            }
-
-
-            .countdown-section {
-
-                padding-top: 3vh;
-
-                padding-bottom: 3vh;
-
-                padding-left: 8px;
-
-                padding-right: 8px;
-            }
-
-
-            .event-info {
-
-                gap: 8px;
-
-                max-width: 100%;
-            }
-
-
-            .event-label {
-
-                font-size: 24px;
-            }
-
-
-            .event-value {
-
-                font-size: 27px;
-
-                line-height: 1.5;
-            }
-
-
-            .countdown-title {
-
-                font-size: 34px;
-
-                margin-top: 35px;
-
-                margin-bottom: 20px;
-            }
-
-
-            .countdown {
-
-                gap: 3px;
-
-                padding-left: 0;
-
-                padding-right: 0;
-            }
-
-
-            .time-box {
-
-                flex: 0 0 68px;
-
-                width: 68px;
-
-                min-width: 68px;
-
-                max-width: 68px;
-
-                padding:
-                    11px
-                    1px;
-
-                border-radius: 9px;
-            }
-
-
-            .time-number {
-
-                font-size: 25px;
-            }
-
-
-            .time-label {
-
-                font-size: 20px;
-            }
-
-
-            .address-info {
-
-                margin-top: 20px;
-
-                padding-left: 5px;
-
-                padding-right: 5px;
-            }
-
-
-            .address-label {
-
-                font-size: 25px;
-            }
-
-
-            .address-value {
-
-                font-size: 29px;
-
-                line-height: 1.6;
-            }
-
-
-            .final-message {
-
-                font-size: 31px;
-
-                margin-top: 4em;
-
-                margin-bottom: 25px;
-
-                padding-left: 5px;
-
-                padding-right: 5px;
-            }
-
-
-            .music-btn {
-
-                right: 14px;
-
-                bottom: 14px;
-
-                width: 40px;
-
-                height: 40px;
-
-                font-size: 20px;
-            }
-
-        }
-
-
-
-        /* ==================================================
-           دکمه موسیقی
-        ================================================== */
 
         .music-btn {
 
-            position: fixed;
+            right: 14px;
 
-            right: 18px;
+            bottom: 14px;
 
-            bottom: 18px;
+            width: 40px;
 
-            width: 42px;
+            height: 40px;
 
-            height: 42px;
-
-            border:
-                1px solid
-                rgba(116, 81, 90, 0.30);
-
-            border-radius: 50%;
-
-            background:
-                rgba(255, 255, 255, 0.45);
-
-            backdrop-filter:
-                blur(5px);
-
-            -webkit-backdrop-filter:
-                blur(5px);
-
-            color: #74515a;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 21px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 0;
-
-            cursor: pointer;
-
-            z-index: 9999;
-
-            box-shadow:
-                0 2px 10px
-                rgba(116, 81, 90, 0.12);
-
-            transition:
-                all 0.3s ease;
+            font-size: 20px;
         }
 
-
-        .music-btn:hover {
-
-            transform:
-                scale(1.05);
-        }
+    }
 
 
-        .music-btn.playing {
 
-            background:
-                rgba(255, 255, 255, 0.68);
+    /* ==================================================
+       دکمه موسیقی
+    ================================================== */
 
-            box-shadow:
-                0 0 12px
-                rgba(116, 81, 90, 0.22);
-        }
+    .music-btn {
 
-    </style>
+        position: fixed;
+
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 42px;
+
+        height: 42px;
+
+        border:
+            1px solid
+            rgba(116, 81, 90, 0.30);
+
+        border-radius: 50%;
+
+        background:
+            rgba(255, 255, 255, 0.45);
+
+        backdrop-filter:
+            blur(5px);
+
+        -webkit-backdrop-filter:
+            blur(5px);
+
+        color: #74515a;
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size: 21px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0;
+
+        cursor: pointer;
+
+        z-index: 9999;
+
+        box-shadow:
+            0 2px 10px
+            rgba(116, 81, 90, 0.12);
+
+        transition:
+            all 0.3s ease;
+    }
+
+
+    .music-btn:hover {
+
+        transform:
+            scale(1.05);
+    }
+
+
+    .music-btn.playing {
+
+        background:
+            rgba(255, 255, 255, 0.68);
+
+        box-shadow:
+            0 0 12px
+            rgba(116, 81, 90, 0.22);
+    }
+
+</style>
+```
 
 </head>
 
-
-
 <body>
 
+```
+<!-- ==================================================
+     صفحه اول / کاور
+================================================== -->
 
-    <!-- ==================================================
-         صفحه اول / کاور
-    ================================================== -->
+<div
+    class="intro-screen"
+    id="introScreen"
+>
 
-    <div
-        class="intro-screen"
-        id="introScreen"
-    >
-
-        <div class="intro-text">
-            برای ورود ضربه بزنید
-        </div>
-
+    <div class="intro-text">
+        لطفا برای ورود ضربه بزنید
     </div>
 
+</div>
+
+
+
+<!-- ==================================================
+     موسیقی
+================================================== -->
+
+<button
+    id="musicBtn"
+    class="music-btn"
+    type="button"
+    aria-label="روشن و خاموش کردن موسیقی"
+    title="موسیقی"
+>
+    ♪
+</button>
+
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<main
+    class="wedding-card"
+    id="mainCard"
+>
 
 
     <!-- ==================================================
-         موسیقی
+         بخش اول
     ================================================== -->
 
-    <button
-        id="musicBtn"
-        class="music-btn"
-        type="button"
-        aria-label="روشن و خاموش کردن موسیقی"
-        title="موسیقی"
+    <section class="opening-section">
+
+
+        <div class="top-bism">
+            بسم ربّ العشق
+        </div>
+
+
+        <div class="opening-poem">
+
+            <div class="poem-line">
+                کنون که موسم وصل است و ما همه جمعیم،
+            </div>
+
+            <div class="poem-line">
+                خدا کند که بیاییُ وصل ما بینی
+            </div>
+
+            <div class="poem-line ya-saheb">
+                «یا صاحب الزمان»
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="section-divider"></div>
+
+
+
+    <!-- ==================================================
+         بخش دوم
+    ================================================== -->
+
+    <section
+        class="invitation-section"
+        id="invitation"
     >
-        ♪
-    </button>
+
+        <div class="couple-name">
+            ریحانه و محمد حسین
+        </div>
 
 
-    <audio
-        id="bgMusic"
-        loop
-        preload="auto"
+        <div class="family-name">
+            حسن‌زاده - عباسی
+        </div>
+
+
+        <div class="invitation-text">
+
+            زندگی‌مان را با توکل به خدا و ائمه(ع) آغاز می‌کنیم
+
+            <br>
+
+            و در سالروز ولادت حضرت زینب (س)
+
+            <br>
+
+            با هم یکی شدنمان را جشن می‌گیریم
+
+            <br>
+
+            و فصل جدید زندگی‌مان را در این روز پربرکت آغاز می‌کنیم.
+
+            <br>
+
+            با حضورتان گرما‌بخش مراسم ما باشید.
+
+        </div>
+
+
+        <div class="absence-message">
+
+            در صورت عدم حضور لطفا تا ۴۸ ساعت آینده اطلاع دهید.
+
+            <br>
+
+            با تشکر
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="section-divider"></div>
+
+
+
+    <!-- ==================================================
+         بخش سوم
+    ================================================== -->
+
+    <section
+        class="countdown-section"
+        id="countdownSection"
     >
 
-        <source
-            src="music.mp3"
-            type="audio/mpeg"
-        >
 
-    </audio>
+        <div class="event-info">
 
+            <div class="event-item">
 
-
-    <main
-        class="wedding-card"
-        id="mainCard"
-    >
-
-
-        <!-- ==================================================
-             بخش اول
-        ================================================== -->
-
-        <section class="opening-section">
-
-
-            <div class="top-bism">
-                بسم ربّ العشق
-            </div>
-
-
-            <div class="opening-poem">
-
-                <div class="poem-line">
-                    کنون که موسم وصل است و ما همه جمعیم،
-                </div>
-
-                <div class="poem-line">
-                    خدا کند که بیاییُ وصل ما بینی
-                </div>
-
-                <div class="poem-line ya-saheb">
-                    «یا صاحب الزمان»
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-
-        <div class="section-divider"></div>
-
-
-
-        <!-- ==================================================
-             بخش دوم
-        ================================================== -->
-
-        <section
-            class="invitation-section"
-            id="invitation"
-        >
-
-            <div class="couple-name">
-                ریحانه و محمد حسین
-            </div>
-
-
-            <div class="family-name">
-                حسن‌زاده - عباسی
-            </div>
-
-
-            <div class="invitation-text">
-
-                زندگی‌مان را با توکل به خدا و ائمه(ع) آغاز می‌کنیم
-
-                <br>
-
-                و در سالروز ولادت حضرت زینب (س)
-
-                <br>
-
-                با هم یکی شدنمان را جشن می‌گیریم
-
-                <br>
-
-                و فصل جدید زندگی‌مان را در این روز پربرکت آغاز می‌کنیم.
-
-                <br>
-
-                با حضورتان گرما‌بخش مراسم ما باشید.
-
-            </div>
-
-
-            <!-- پیام عدم حضور -->
-
-            <div class="absence-message">
-
-                در صورت عدم حضور لطفا تا ۴۸ ساعت آینده اطلاع دهید.
-
-                <br>
-
-                با تشکر
-
-            </div>
-
-
-        </section>
-
-
-
-        <div class="section-divider"></div>
-
-
-
-        <!-- ==================================================
-             بخش سوم
-        ================================================== -->
-
-        <section
-            class="countdown-section"
-            id="countdownSection"
-        >
-
-
-            <!-- تاریخ و ساعت -->
-
-            <div class="event-info">
-
-                <div class="event-item">
-
-                    <span class="event-label">
-                        تاریخ
-                    </span>
-
-                    <span class="event-value">
-                        چهارشنبه ۲۲ مهر ۱۴۰۵
-                    </span>
-
-                </div>
-
-
-                <div class="event-item">
-
-                    <span class="event-label">
-                        ساعت
-                    </span>
-
-                    <span class="event-value">
-                        ۱۸:۰۰ تا ۲۱:۳۰
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- عنوان -->
-
-            <div class="countdown-title">
-                تا آغاز این شب زیبا
-            </div>
-
-
-
-            <!-- تایمر -->
-
-            <div class="countdown">
-
-                <div class="time-box">
-
-                    <span
-                        class="time-number"
-                        id="days"
-                    >
-                        00
-                    </span>
-
-                    <span class="time-label">
-                        روز
-                    </span>
-
-                </div>
-
-
-                <div class="time-box">
-
-                    <span
-                        class="time-number"
-                        id="hours"
-                    >
-                        00
-                    </span>
-
-                    <span class="time-label">
-                        ساعت
-                    </span>
-
-                </div>
-
-
-                <div class="time-box">
-
-                    <span
-                        class="time-number"
-                        id="minutes"
-                    >
-                        00
-                    </span>
-
-                    <span class="time-label">
-                        دقیقه
-                    </span>
-
-                </div>
-
-
-                <div class="time-box">
-
-                    <span
-                        class="time-number"
-                        id="seconds"
-                    >
-                        00
-                    </span>
-
-                    <span class="time-label">
-                        ثانیه
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- آدرس -->
-
-            <div class="address-info">
-
-                <span class="address-label">
-                    مکان
+                <span class="event-label">
+                    تاریخ
                 </span>
 
-                <span class="address-value">
-                    وکیل‌آباد۷۰، بلوار شهید برونسی،
-                    <br>
-                    مجتمع هویزه، تالار گل مریم
+                <span class="event-value">
+                    چهارشنبه ۲۲ مهر ۱۴۰۵
                 </span>
 
             </div>
 
 
+            <div class="event-item">
 
-            <!-- پیام پایانی -->
+                <span class="event-label">
+                    ساعت
+                </span>
 
-            <div class="final-message">
+                <span class="event-value">
+                    ۱۸:۰۰ تا ۲۱:۳۰
+                </span>
 
-                منتظر حضور گرم شما عزیزان هستیم.
+            </div>
+
+        </div>
+
+
+
+        <div class="countdown-title">
+            تا آغاز این شب زیبا
+        </div>
+
+
+
+        <div class="countdown">
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="days"
+                >
+                    00
+                </span>
+
+                <span class="time-label">
+                    روز
+                </span>
 
             </div>
 
 
-        </section>
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="hours"
+                >
+                    00
+                </span>
+
+                <span class="time-label">
+                    ساعت
+                </span>
+
+            </div>
 
 
-    </main>
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="minutes"
+                >
+                    00
+                </span>
+
+                <span class="time-label">
+                    دقیقه
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="seconds"
+                >
+                    00
+                </span>
+
+                <span class="time-label">
+                    ثانیه
+                </span>
+
+            </div>
+
+        </div>
 
 
 
-    <script>
+        <div class="address-info">
+
+            <span class="address-label">
+                مکان
+            </span>
+
+            <span class="address-value">
+                وکیل‌آباد۷۰، بلوار شهید برونسی،
+                <br>
+                مجتمع هویزه، تالار گل مریم
+            </span>
+
+        </div>
 
 
-        /* ==================================================
-           باز کردن صفحه اول
-        ================================================== */
 
-        const introScreen =
-            document.getElementById(
-                "introScreen"
-            );
+        <div class="final-message">
+
+            منتظر حضور گرم شما عزیزان هستیم.
+
+        </div>
 
 
-        const mainCard =
-            document.getElementById(
-                "mainCard"
-            );
+    </section>
 
 
-        function openInvitation() {
-
-            introScreen.classList.add("hide");
+</main>
 
 
-            setTimeout(
-                function () {
 
-                    window.scrollTo({
+<script>
 
-                        top:
-                            mainCard.offsetTop,
 
-                        behavior:
-                            "smooth"
+    /* ==================================================
+       باز کردن صفحه اول
+       فقط محو شدن - بدون حرکت
+    ================================================== */
 
-                    });
+    const introScreen =
+        document.getElementById(
+            "introScreen"
+        );
 
-                },
-                350
-            );
 
+    const mainCard =
+        document.getElementById(
+            "mainCard"
+        );
+
+
+    function openInvitation() {
+
+        /* فقط کلاس hide اضافه می‌شود.
+           هیچ translate یا حرکت دیگری وجود ندارد. */
+
+        introScreen.classList.add("hide");
+
+
+        /*
+         * بعد از تمام شدن محو شدن،
+         * صفحه اصلی در جای خودش قرار دارد.
+         */
+
+        setTimeout(
+            function () {
+
+                introScreen.style.display =
+                    "none";
+
+            },
+            1600
+        );
+
+    }
+
+
+    introScreen.addEventListener(
+        "click",
+        openInvitation
+    );
+
+
+    introScreen.addEventListener(
+        "touchstart",
+        openInvitation,
+        {
+            passive: true
         }
+    );
 
 
-        introScreen.addEventListener(
-            "click",
-            openInvitation
+
+    /* ==================================================
+       انیمیشن بخش دوم
+    ================================================== */
+
+    const invitationSection =
+        document.querySelector(
+            ".invitation-section"
         );
 
 
-        introScreen.addEventListener(
-            "touchstart",
-            openInvitation,
+    const observer =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            invitationSection
+                                .classList
+                                .add("show");
+
+                        }
+
+                    }
+                );
+
+            },
+
             {
-                passive: true
-            }
-        );
-
-
-
-        /* ==================================================
-           انیمیشن بخش دوم
-        ================================================== */
-
-        const invitationSection =
-            document.querySelector(
-                ".invitation-section"
-            );
-
-
-        const observer =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(
-                        function(entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                invitationSection
-                                    .classList
-                                    .add("show");
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: 0.25
-                }
-
-            );
-
-
-        observer.observe(
-            invitationSection
-        );
-
-
-
-        /* ==================================================
-           انیمیشن بخش سوم
-        ================================================== */
-
-        const countdownSection =
-            document.querySelector(
-                ".countdown-section"
-            );
-
-
-        const countdownObserver =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(
-                        function(entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                countdownSection
-                                    .classList
-                                    .add("show");
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: 0.15
-                }
-
-            );
-
-
-        countdownObserver.observe(
-            countdownSection
-        );
-
-
-
-        /* ==================================================
-           تایمر
-        ================================================== */
-
-        const weddingDate =
-            new Date(
-                "2026-10-14T18:00:00"
-            ).getTime();
-
-
-        function updateCountdown() {
-
-            const now =
-                new Date().getTime();
-
-
-            const difference =
-                weddingDate - now;
-
-
-            if (
-                difference <= 0
-            ) {
-
-                document.getElementById("days").innerText =
-                    "00";
-
-                document.getElementById("hours").innerText =
-                    "00";
-
-                document.getElementById("minutes").innerText =
-                    "00";
-
-                document.getElementById("seconds").innerText =
-                    "00";
-
-                return;
+                threshold: 0.25
             }
 
+        );
 
-            const days =
-                Math.floor(
-                    difference /
-                    (1000 * 60 * 60 * 24)
+
+    observer.observe(
+        invitationSection
+    );
+
+
+
+    /* ==================================================
+       انیمیشن بخش سوم
+    ================================================== */
+
+    const countdownSection =
+        document.querySelector(
+            ".countdown-section"
+        );
+
+
+    const countdownObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            countdownSection
+                                .classList
+                                .add("show");
+
+                        }
+
+                    }
                 );
 
+            },
 
-            const hours =
-                Math.floor(
-                    (
-                        difference %
-                        (1000 * 60 * 60 * 24)
-                    ) /
-                    (1000 * 60 * 60)
-                );
+            {
+                threshold: 0.15
+            }
+
+        );
 
 
-            const minutes =
-                Math.floor(
-                    (
-                        difference %
-                        (1000 * 60 * 60)
-                    ) /
-                    (1000 * 60)
-                );
+    countdownObserver.observe(
+        countdownSection
+    );
 
 
-            const seconds =
-                Math.floor(
-                    (
-                        difference %
-                        (1000 * 60)
-                    ) /
-                    1000
-                );
 
+    /* ==================================================
+       تایمر
+    ================================================== */
+
+    const weddingDate =
+        new Date(
+            "2026-10-14T18:00:00"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+
+        const difference =
+            weddingDate - now;
+
+
+        if (
+            difference <= 0
+        ) {
 
             document.getElementById("days").innerText =
-                String(days).padStart(2, "0");
-
+                "00";
 
             document.getElementById("hours").innerText =
-                String(hours).padStart(2, "0");
-
+                "00";
 
             document.getElementById("minutes").innerText =
-                String(minutes).padStart(2, "0");
-
+                "00";
 
             document.getElementById("seconds").innerText =
-                String(seconds).padStart(2, "0");
+                "00";
 
+            return;
         }
 
 
-        updateCountdown();
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
 
 
-        setInterval(
-            updateCountdown,
-            1000
+        const hours =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60 * 24)
+                ) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60)
+                ) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60)
+                ) /
+                1000
+            );
+
+
+        document.getElementById("days").innerText =
+            String(days).padStart(2, "0");
+
+
+        document.getElementById("hours").innerText =
+            String(hours).padStart(2, "0");
+
+
+        document.getElementById("minutes").innerText =
+            String(minutes).padStart(2, "0");
+
+
+        document.getElementById("seconds").innerText =
+            String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
+
+    /* ==================================================
+       خط طلایی
+    ================================================== */
+
+    const dividers =
+        document.querySelectorAll(
+            ".section-divider"
         );
 
 
+    const dividerObserver =
+        new IntersectionObserver(
 
-        /* ==================================================
-           خط طلایی
-        ================================================== */
+            (entries) => {
 
-        const dividers =
-            document.querySelectorAll(
-                ".section-divider"
-            );
+                entries.forEach(
+                    (entry) => {
 
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-        const dividerObserver =
-            new IntersectionObserver(
-
-                (entries) => {
-
-                    entries.forEach(
-                        (entry) => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target
-                                    .classList
-                                    .add("show");
-
-                            }
+                            entry.target
+                                .classList
+                                .add("show");
 
                         }
-                    );
 
-                },
-
-                {
-                    threshold: 0.3
-                }
-            );
-
-
-        dividers.forEach(
-            (divider) => {
-
-                dividerObserver.observe(
-                    divider
+                    }
                 );
 
+            },
+
+            {
+                threshold: 0.3
             }
         );
 
 
+    dividers.forEach(
+        (divider) => {
 
-        /* ==================================================
-           موسیقی
-        ================================================== */
-
-        const musicBtn =
-            document.getElementById(
-                "musicBtn"
+            dividerObserver.observe(
+                divider
             );
-
-
-        const bgMusic =
-            document.getElementById(
-                "bgMusic"
-            );
-
-
-        bgMusic.volume = 0.7;
-
-
-        function setMusicButtonPlaying() {
-
-            musicBtn.classList.add(
-                "playing"
-            );
-
-            musicBtn.innerHTML =
-                "♫";
 
         }
+    );
 
 
-        function setMusicButtonPaused() {
 
-            musicBtn.classList.remove(
-                "playing"
-            );
+    /* ==================================================
+       موسیقی
+    ================================================== */
 
-            musicBtn.innerHTML =
-                "♪";
+    const musicBtn =
+        document.getElementById(
+            "musicBtn"
+        );
+
+
+    const bgMusic =
+        document.getElementById(
+            "bgMusic"
+        );
+
+
+    bgMusic.volume = 0.7;
+
+
+    function setMusicButtonPlaying() {
+
+        musicBtn.classList.add(
+            "playing"
+        );
+
+        musicBtn.innerHTML =
+            "♫";
+
+    }
+
+
+    function setMusicButtonPaused() {
+
+        musicBtn.classList.remove(
+            "playing"
+        );
+
+        musicBtn.innerHTML =
+            "♪";
+
+    }
+
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            bgMusic.play()
+
+                .then(
+                    function () {
+
+                        setMusicButtonPlaying();
+
+                    }
+                )
+
+                .catch(
+                    function () {
+
+                        setMusicButtonPaused();
+
+                    }
+                );
 
         }
+    );
 
 
-        window.addEventListener(
-            "load",
-            function () {
+    musicBtn.addEventListener(
+        "click",
+        function () {
+
+            if (
+                bgMusic.paused
+            ) {
 
                 bgMusic.play()
 
@@ -2113,51 +2145,21 @@
                     );
 
             }
-        );
 
+            else {
 
-        musicBtn.addEventListener(
-            "click",
-            function () {
+                bgMusic.pause();
 
-                if (
-                    bgMusic.paused
-                ) {
-
-                    bgMusic.play()
-
-                        .then(
-                            function () {
-
-                                setMusicButtonPlaying();
-
-                            }
-                        )
-
-                        .catch(
-                            function () {
-
-                                setMusicButtonPaused();
-
-                            }
-                        );
-
-                }
-
-                else {
-
-                    bgMusic.pause();
-
-                    setMusicButtonPaused();
-
-                }
+                setMusicButtonPaused();
 
             }
-        );
+
+        }
+    );
 
 
-    </script>
-
+</script>
+```
 
 </body>
 
