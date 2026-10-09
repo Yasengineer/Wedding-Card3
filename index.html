@@ -405,45 +405,26 @@
        فقط بعد از کلیک فعال می‌شود.
     ================================================== */
 
-    .wedding-card.revealed .top-bism {
+    
+.wedding-card.revealed .top-bism {
+    animation: topBismAppear 0.5s ease-out forwards;
+}
 
-        animation:
-            topBismAppear
-            0.1s
-            ease-out
-            forwards;
-    }
+.wedding-card.revealed .poem-line {
+    animation: poemAppear 0.7s ease-out forwards;
+}
 
+.wedding-card.revealed .poem-line:nth-child(1) {
+    animation-delay: 0.05s;
+}
 
-    .wedding-card.revealed .poem-line {
+.wedding-card.revealed .poem-line:nth-child(2) {
+    animation-delay: 0.15s;
+}
 
-        animation:
-            poemAppear
-            0.2s
-            ease-out
-            forwards;
-    }
-
-
-    .wedding-card.revealed .poem-line:nth-child(1) {
-
-        animation-delay:
-            0.2s;
-    }
-
-
-    .wedding-card.revealed .poem-line:nth-child(2) {
-
-        animation-delay:
-            0.3s;
-    }
-
-
-    .wedding-card.revealed .poem-line:nth-child(3) {
-
-        animation-delay:
-            0.4s;
-    }
+.wedding-card.revealed .poem-line:nth-child(3) {
+    animation-delay: 0.25s;
+}
 
 
 
